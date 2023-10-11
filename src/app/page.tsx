@@ -18,9 +18,7 @@ export default function Hello() {
             <p className='text-[35px]'>LaCasaPreciosa</p>
           </div>
         </div> 
-
         <Mybutton bDetail='Books'/>
-
       </header>
     </>
   )
