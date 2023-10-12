@@ -1,25 +1,11 @@
-import {CgMenu} from 'react-icons/cg'
-import Mybutton from '@/components/button/button'
-import Image from 'next/image'
-import { lacasa } from '@/assets'
+import Homepage from "@/components/homePage/homePage"
+import Introduction from "@/components/introduction/introduction"
+import { introColection as intro} from "@/utils/introductionCollection"
 export default function Hello() {
   return (
-    <>
-      <header className='flex items-center justify-between'>
-        <div>
-          <CgMenu/>
-        </div>
-
-        <div className='flex flex-col items-center justify-center'>
-           <div>
-            <Image src={lacasa} alt='logo' className='w-[3rem] h-[3rem]'/>
-          </div>
-          <div>
-            <p className='text-[35px]'>LaCasaPreciosa</p>
-          </div>
-        </div> 
-        <Mybutton bDetail='Books'/>
-      </header>
-    </>
+    <div>
+    <Homepage/>
+    <Introduction introTitle={intro[0].introTitle} introDetails={intro[0].introDetails} introBtn={intro[0].introBtn}/>
+    </div>
   )
 }

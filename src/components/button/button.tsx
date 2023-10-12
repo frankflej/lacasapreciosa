@@ -6,8 +6,10 @@ interface Btn {
 
 export default function Mybutton({ bDetail }: Btn) {
   return (
-    <div className='flex items-center justify-center'> 
-      <button className="mx-4 text-[30px] text-slate-500">{bDetail}</button>
+    <div> 
+      <button className='relative text-[13.5px] rounded-[0.2rem] border-white border-[2.5px] px-[2.5rem] uppercase py-[0.7rem] cursor hover:bg-[#0101019b] duration-[0.5s]'>
+        {bDetail}
+      </button>
     </div>
   );
 }
