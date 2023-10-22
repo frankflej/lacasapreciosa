@@ -1,6 +1,5 @@
 import React from 'react'
 import Mybutton from '../button/button'
-import Image from 'next/image'
 import { background } from '@/assets'
 import {BsArrowLeft,BsArrowRight} from 'react-icons/bs'
 
