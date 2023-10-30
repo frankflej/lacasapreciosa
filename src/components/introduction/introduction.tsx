@@ -15,8 +15,8 @@ export default function Introduction({introTitle,introDetails,introBtn}:intro) {
         <div className="mb-[3rem]">
             <p>{introDetails}</p>
         </div>
-        <div className="mb-[3rem]">
-            <Mybutton bDetail={introBtn}/>
+        <div className="mb-[3rem] flex justify-center">
+            <Mybutton bDetail={introBtn} showIcon={false}/>
         </div>
         </div>
     </div>

@@ -22,7 +22,7 @@ export default function Homepage() {
           </div>
         </div> 
 
-        <Mybutton bDetail='Book'/>
+        <Mybutton bDetail='Book' showIcon={false}/>
 
       </header>
       <main>
@@ -33,8 +33,8 @@ export default function Homepage() {
           </p>
           </div>
 
-          <div>
-            <Mybutton bDetail='Book'/>
+          <div className='flex justify-center'>
+          <Mybutton bDetail='Book' showIcon={false}/>
           </div>
         </div>
       </main>
