@@ -7,6 +7,7 @@ export const allAbouts: About[]=[
         aboutTitle:"Rooms & Suites",
         aboutDetail:"Perfect for all occasions, our range of contemporary rooms, suites and penthouses offer the perfect base from which to explore London. Whether you are here for an overnight stay, a city break, or a family staycation, we have something to suit.",
         aboutLink:"rooms",
+        aboutSubTitle:"Stylish rooms and suites on Londons South Bank",
         aboutImage:[lacasa,lacasa,lacasa,background]
     },
     {

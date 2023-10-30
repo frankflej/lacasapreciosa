@@ -10,10 +10,10 @@ export default function Homepage() {
       }}>
       <header className='flex items-center justify-between'>
         <div>
-          <CgMenu className='text-[2rem]' />
+          <CgMenu className='text-[2rem] ' />
         </div>
 
-        <div className='flex flex-col items-center justify-center'>
+        <div className='flex flex-col items-center  justify-center'>
            <div>
             <Image src={lacasa} alt='logo' className='w-[4.4rem] h-[4.4rem]'/>
           </div>
