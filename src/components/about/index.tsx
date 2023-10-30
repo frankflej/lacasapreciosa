@@ -29,18 +29,18 @@ export default function About() {
                  <div className='w-[100%] h-[90%] flex  items-center justify-center '>
                      <div className='w-[50%]'>
                      <div id='aboutTitle'>
-                 <h4>{about.aboutTitle}</h4>
+                 <h3>{about.aboutTitle}</h3>
                  </div>
                  <div id='aboutSubTitle'>
                  <h5>{about.aboutSubTitle}</h5>
                  </div>
-                 <div className='' id='aboutDetail'>
+                 <div className='text-[17px]' id='aboutDetail'>
                      <p>
                      {about.aboutDetail}
                      </p>
                  </div>
                  <div>
-                     <Mybutton bDetail={about.aboutLink}/>
+                     <Mybutton bDetail={about.aboutLink} showIcon={true}/>
                  </div>
                      </div>
                  </div>
