@@ -17,30 +17,30 @@ export default function About() {
                    }}>
         <div className={`flex w-[100%] h-[100%] ${index%2==0?'justify-end':'justify-start'} items-end`}>
              <div className='flex gap-[0.1rem]'>
-             <div className='flex items-center justify-center bg-slate-300 w-[5rem] h-[5rem]'>
-                 <BsArrowLeft className='text-[2rem]'/>
+             <div className='flex items-center justify-center bg-[#fff] w-[5rem] h-[5rem]'>
+                 <BsArrowLeft className='text-[#4fb4be] text-[2.8rem]'/>
              </div>
-             <div className='flex items-center justify-center bg-slate-300 w-[5rem] h-[5rem]'>
-                 <BsArrowRight className='text-[2rem]'/>
+             <div className='flex items-center justify-center bg-[#fff] w-[5rem] h-[5rem]'>
+                 <BsArrowRight className='text-[#4fb4be] text-[2.8rem]'/>
              </div>
              </div>
         </div>
                  </div>
                  <div className='w-[100%] h-[90%] flex  items-center justify-center '>
                      <div className='w-[50%]'>
-                     <div id='aboutTitle'>
+                     <div id='aboutTitle' className='text-[2rem] pb-3'>
                  <h3>{about.aboutTitle}</h3>
                  </div>
-                 <div id='aboutSubTitle'>
+                 <div id='aboutSubTitle' className=''>
                  <h5>{about.aboutSubTitle}</h5>
                  </div>
-                 <div className='text-[17px]' id='aboutDetail'>
+                 <div className='text-[17px] pb-6' id='aboutDetail' >
                      <p>
                      {about.aboutDetail}
                      </p>
                  </div>
                  <div>
-                     <Mybutton bDetail={about.aboutLink} showIcon={true}/>
+                     <Mybutton bDetail={'Explore more'} showIcon={true} bgColor={true}/>
                  </div>
                      </div>
                  </div>
