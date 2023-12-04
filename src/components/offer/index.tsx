@@ -4,7 +4,7 @@ import { Offer } from "./type"
 
 export default function Offer() {
   return (
-    <div className="w-[100%] mb-[20rem] pb-[25rem] flex justify-center text-txt-color">
+    <div className="w-[100%] mb-[20rem] pb-[5rem] flex justify-center text-txt-color">
        <div className="w-[65%]">
        <div className="text-center text-[2rem] mb-5">
             <h2>Offers</h2>
