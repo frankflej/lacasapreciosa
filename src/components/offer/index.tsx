@@ -9,7 +9,7 @@ export default function Offer() {
        <div className="text-center text-[2rem] mb-5">
             <h2>Offers</h2>
         </div>
-        <div className='flex  bg-main-color w-[100%]'>
+        <div className='flex gap-x-2  bg-main-color w-[100%]'>
             {
                 offerCollection?.map((offer:Offer,key)=>(
                     <div className='relative bg-main-color w-[33.3%]' key={key}>
@@ -19,8 +19,9 @@ export default function Offer() {
                    }}
                    > 
                 </div>
-                <div className='w-[90%] bg-main-color p-7 absolute top-[14.5rem]'>
-                    <div className='offerTitle text-[1.6rem] mb-[1rem]'>
+                <div className='flex justify-center'>
+<div className="w-[90%] bg-[#ffffff53] absolute top-[15rem] ">
+                    <div className='offerTitle text-[1.6rem] mb-[1rem] pt-[1.5rem]'>
                         <h2>{offer.offerTitle}</h2>
                     </div>
                     <div>
@@ -31,6 +32,8 @@ export default function Offer() {
                     <div className='offerTitle flex w-[100%] justify-center'>
                         <Mybutton bDetail={offer.offerBtnlink} showIcon={true} bgColor={true}/>
                     </div>
+                    </div>
+
                 </div>
             </div>
                 ))
