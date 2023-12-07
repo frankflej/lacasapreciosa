@@ -4,7 +4,9 @@ import { background } from '@/assets'
 import {BsArrowLeft,BsArrowRight} from 'react-icons/bs'
 import { allAbouts } from '@/utils/aboutCollection'
 
+
 export default function About() {
+    
   return (
     <div>
        {
@@ -15,13 +17,13 @@ export default function About() {
                   style={{
                      backgroundImage: `linear-gradient(to bottom,#0101018a,#0101018a), url(${background.src})`,
                    }}>
-        <div className={`flex w-[100%] h-[100%] ${index%2==0?'justify-end':'justify-start'} items-end`}>
+         <div className={`flex w-[100%] h-[100%] ${index%2==0?'justify-end':'justify-start'} items-end`}>
              <div className='flex gap-[0.1rem]'>
-             <div className='flex items-center justify-center bg-[#fff] w-[5rem] h-[5rem]'>
-                 <BsArrowLeft className='text-[#4fb4be] text-[2.8rem]'/>
+             <div className='flex items-center justify-center bg-[rgb(255,255,255)] w-[2rem] h-[2rem]'>
+                 <BsArrowLeft className='text-[#4fb4be] text-[1.5rem]'/>
              </div>
-             <div className='flex items-center justify-center bg-[#fff] w-[5rem] h-[5rem]'>
-                 <BsArrowRight className='text-[#4fb4be] text-[2.8rem]'/>
+             <div className='flex items-center justify-center bg-[#fff] w-[2rem] h-[2rem]'>
+                 <BsArrowRight className='text-[#4fb4be] text-[1.5rem]'/>
              </div>
              </div>
         </div>
