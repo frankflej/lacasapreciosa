@@ -4,7 +4,7 @@ import Image from "next/image";
 import { lacasa,background } from '@/assets'
 export default function Homepage() {
   return (
-    <div className='h-screen flex flex-col gap-[20%] pt-[1.5rem] px-[2.8rem] bg-cover '
+    <div className='h-screen flex flex-col gap-[20%] pt-[1.5rem] px-[2.8rem] bg-cover font-sans'
     style={{
         backgroundImage: `linear-gradient(to bottom,#0101018a,#0101018a), url(${background.src})`,
       }}>
@@ -27,7 +27,7 @@ export default function Homepage() {
       </header>
       <main>
         <div className='text-center'>
-          <div className='mb-[5rem] text-[2.5rem]'>
+          <div className='mb-[5rem] text-[2.5rem] font-semibold'>
           <p>
             The hotel you check-in to <br/> tune out 
           </p>
