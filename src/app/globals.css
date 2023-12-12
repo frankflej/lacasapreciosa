@@ -1,3 +1,6 @@
+/* styles.css or styles/tailwind.css */
+@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@200;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
