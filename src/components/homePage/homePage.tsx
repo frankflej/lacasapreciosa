@@ -1,7 +1,7 @@
 import {CgMenu} from 'react-icons/cg'
 import Mybutton from '@/components/button/button'
 import Image from "next/image";
-import { lacasa,background } from '@/assets'
+import { lacasa,background ,negra} from '@/assets'
 export default function Homepage() {
   return (
     <div className='h-screen flex flex-col gap-[20%] pt-[1.5rem] px-[2.8rem] bg-cover font-sans'
@@ -15,10 +15,10 @@ export default function Homepage() {
 
         <div className='flex flex-col items-center  justify-center'>
            <div>
-            <Image src={lacasa} alt='logo' className='w-[4.4rem] h-[4.4rem]'/>
+            <Image src={negra} alt='logo' className='w-[4.4rem] h-[4.4rem]'/>
           </div>
           <div>
-            <p className='text-[1.3rem] font-medium'>LaCasaPreciosa</p>
+            <p className='text-[1.3rem] font-medium'>La Perla Negra</p>
           </div>
         </div> 
 
