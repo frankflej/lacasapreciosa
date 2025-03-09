@@ -7,7 +7,7 @@ import { background, negra } from '@/assets';
 
 const Mybutton = dynamic(() => import('@/components/button/button'), { ssr: false });
 
-export default function Homepage() {
+export default function Landingpage() {
   const [bgUrl, setBgUrl] = useState('');
   const [navOpen, setNavOpen] = useState(false);
 
