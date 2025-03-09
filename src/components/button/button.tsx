@@ -1,21 +1,19 @@
 import React from "react";
-import {BsArrowRight} from 'react-icons/bs'
+import { BsArrowRight } from 'react-icons/bs';
 
 interface Btn {
   bDetail: string;
   showIcon: boolean;
-  bgColor?: boolean ;
+  className?: string;
 }
 
-export default function Mybutton({ bDetail,showIcon,bgColor }: Btn) {
+export default function Mybutton({ bDetail, showIcon, className }: Btn) {
   return (
-    <div> 
-     <button
-    className="px-5 py-3 text-white duration-150 bg-transparent border-2 border-white rounded-full hover:bg-white hover:text-black active:bg-white active:text-black"
->
-    {bDetail}
-</button>
-
-    </div>
+    <button
+      className={`flex items-center gap-2 px-6 py-3 text-white bg-[#c07b50] rounded-lg hover:bg-[#a36945] active:bg-[#8a573b] transition-all duration-150 ${className}`}
+    >
+      {bDetail}
+      {showIcon && <BsArrowRight className='text-lg' />}
+    </button>
   );
 }
