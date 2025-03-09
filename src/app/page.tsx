@@ -1,4 +1,4 @@
-import Homepage from "@/components/homePage/homePage"
+import Homepage from "@/components/homePage"
 import { introColection as intro} from "@/utils/introductionCollection"
 export default function Hello() {
   return (
