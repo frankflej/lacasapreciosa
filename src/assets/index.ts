@@ -1,3 +1,6 @@
-export {default as lacasa} from './lacasa.png'
-export {default as background} from './background.jpg'
-export {default as casaBlue} from './casaBlue.png'
+import lacasa from './lacasa.png'
+import background from './background.jpg'
+import casaBlue from './casaBlue.png'
+
+
+export {lacasa, background, casaBlue}

@@ -8,33 +8,37 @@ export default function Homepage() {
     style={{
         backgroundImage: `linear-gradient(to bottom,#0101018a,#0101018a), url(${background.src})`,
       }}>
-      <header className='flex items-center justify-between'>
+      
+      <header className='flex items-center justify-between relative'>
         <div>
           <CgMenu className='text-[2rem] ' />
         </div>
 
-        <div className='flex flex-col items-center  justify-center'>
-           <div>
+        <div className='absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center'>
+          <div>
             <Image src={lacasa} alt='logo' className='w-[4.4rem] h-[4.4rem]'/>
           </div>
           <div>
-            <p className='text-[1.3rem] font-medium'>LaCasaPreciosa</p>
+            <p className='text-[1.3rem] font-medium'>La Perla Negra</p>
           </div>
-        </div> 
-
-        <Mybutton bDetail='Book' showIcon={false}/>
-
+        </div>
+        
+        <div className='flex gap-[1rem]'>
+          <Mybutton bDetail='Book'/>
+          <Mybutton bDetail='Login' />
+        </div>
       </header>
       <main>
         <div className='text-center'>
           <div className='mb-[5rem] text-[2.5rem] font-semibold'>
           <p>
-            The hotel you check-in to <br/> tune out 
+            Where Tranquility Meets <br/> Endless Beauty
           </p>
           </div>
 
-          <div className='flex justify-center'>
-          <Mybutton bDetail='Book' showIcon={false}/>
+          <div className='flex justify-center gap-[1rem]'>
+          <Mybutton bDetail='Book' />
+        
           </div>
         </div>
       </main>
