@@ -5,6 +5,7 @@ interface Btn {
   bDetail: string;
   showIcon: boolean;
   className?: string;
+  bgColor?: boolean
 }
 
 export default function Mybutton({ bDetail, showIcon, className }: Btn) {
