@@ -6,11 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "codegen": "env-cmd -f .env.example graphql-codegen --config codegen.ts -r "
   },
   "dependencies": {
+    "@graphql-codegen/cli": "^5.0.5",
+    "@graphql-codegen/client-preset": "^4.7.0",
+    "@graphql-codegen/introspection": "^4.0.3",
+    "@graphql-codegen/typescript-graphql-request": "^6.2.0",
+    "@graphql-codegen/typescript-react-query": "^6.1.0",
+    "@tanstack/react-query": "^5.67.2",
+    "dotenv": "^16.4.7",
+    "env-cmd": "^10.1.0",
     "framer-motion": "^10.16.15",
     "google-fonts": "^1.0.0",
+    "graphql": "^16.10.0",
+    "graphql-request": "^7.1.2",
     "next": "^15.2.1",
     "react": "^18",
     "react-dom": "^18",
