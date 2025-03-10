@@ -4,6 +4,8 @@ import Highlights from './highlightsPage';
 import Overview from './overview'
 import HotelInfo from './hotelInfoPage';
 import Facilities from './facilities';
+import LocationDirection from './LocationDirection';
+import PalacesCarousel from './PalacesCarousel';
 
 export default function Homepage() {
   return (
@@ -13,6 +15,8 @@ export default function Homepage() {
     <Highlights/>
     <HotelInfo/>
     <Facilities/>
+    <LocationDirection/>
+    <PalacesCarousel/>
 
 </div>
   );
