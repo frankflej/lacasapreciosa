@@ -2,6 +2,7 @@
 import Landingpage from './homePage';
 import Highlights from './highlightsPage';
 import Overview from './overview'
+import HotelInfo from './hotelInfoPage';
 
 export default function Homepage() {
   return (
@@ -9,6 +10,7 @@ export default function Homepage() {
     <Landingpage/>
     <Overview/>
     <Highlights/>
+    <HotelInfo/>
 </div>
   );
 }

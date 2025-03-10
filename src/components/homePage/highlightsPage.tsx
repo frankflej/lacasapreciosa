@@ -25,7 +25,7 @@ export default function Highlights() {
     <section className="  px-20 py-12 font-serif bg-gray-50">
       {/* Section Title */}
       <div className="lg:flex-row flex items-center justify-between flex-col">
-      <h2 className="text-3xl font-semibold mb-4 flex items-center text-black">
+      <h2 className="text-3xl font-semibold mb-4 flex items-start text-black">
         <span className="w-10 h-[2px] bg-orange-400  mr-4"></span> HIGHLIGHTS
       </h2>
 
