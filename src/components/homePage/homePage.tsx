@@ -26,6 +26,7 @@ export default function Landingpage() {
     <CgMenu className='text-[2rem] md:hidden' onClick={() => setNavOpen(!navOpen)} />
   </div>
 
+
   <nav className={`flex md:flex-row flex-col gap-6 text-md ${navOpen || 'md:flex hidden'}`}>
     <a href='#' className='hover:underline'>DESTINATIONS</a>
     <a href='#' className='hover:underline'>HOTELS</a>
@@ -42,18 +43,16 @@ export default function Landingpage() {
       <div className='h-screen flex flex-col'>
   <main className='text-center flex flex-col items-center justify-center flex-1'>
     <div className='flex flex-col items-center'>
-      <div>
-        <Image src={negra} alt='logo' className='w-[4.4rem] h-[4.4rem]'/>
-
-      </div>
-      <div>
-        <p className='text-[1.3rem] font-medium'>La Perla Negra</p>
+      
+      <div className='flex flex-col items-center mb-12'>
+        <p className=' text-[3rem] font-semibold'>La Perla Negra</p>
+        <p className='text-xs md:text-[1rem] '>≿━━━━༺Muhazi Beach༻━━━━≾</p>
       </div>
     </div>
 
-    <div className='mb-[1rem] mt-12 text-[2.5rem] font-semibold'>
+    <div className='text-[1rem] md:text-[1rem] font-medium '>
           <p>
-            The hotel you check-in to <br/> tune out 
+            Where Tranquility Meets Endless Beauty 
           </p>
           </div>
   </main>
