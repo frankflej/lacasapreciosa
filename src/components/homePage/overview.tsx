@@ -9,7 +9,7 @@ export default function Overview() {
   const [activeTab, setActiveTab] = useState('OVERVIEW');
 
   return (
-    <div className='px-10 py-6 font-serif text-black'>
+    <div className='px-20 py-6 font-serif text-black'>
       {/* Navigation */}
       <nav className='flex items-center justify-center border-b  gap-8 text-gray-600 text-sm uppercase tracking-wide'>
         {['OVERVIEW', 'ROOMS & SUITES', 'OFFERS', 'DINING', 'WELLNESS', 'EXPERIENCES', 'GALLERY'].map((tab) => (
@@ -24,7 +24,7 @@ export default function Overview() {
       </nav>
 
       {/* Content Section */}
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-10 mt-10 items-center justify-between'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-16 mt-10 items-center justify-between'>
         {/* Left Side (Text) */}
         <div>
             <div className='flex items-start'>

@@ -1,6 +1,6 @@
 "use client";
 import Landingpage from './homePage';
-
+import Highlights from './highlightsPage';
 import Overview from './overview'
 
 export default function Homepage() {
@@ -8,6 +8,7 @@ export default function Homepage() {
 <div>
     <Landingpage/>
     <Overview/>
+    <Highlights/>
 </div>
   );
 }
