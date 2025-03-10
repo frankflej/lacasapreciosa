@@ -1,0 +1,6 @@
+query fetchingTesting {
+  testing {
+    id
+    name
+  }
+}
