@@ -12,8 +12,8 @@ const LocationDirection = () => {
     <section className=" px-20 py-12 grid md:grid-cols-2 gap-8 font-serif">
       {/* Left Side - Text Content */}
       <div>
-        <h2 className="text-3xl font-semibold mb-6 flex items-start text-black">
-          <span className="w-10 h-[2px] bg-orange-400 mr-4"></span> LOCATION & DIRECTION
+        <h2 className="text-3xl mb-6 flex items-start text-black">
+           <span className='w-16 h-1 mr-4 text-orange-400'>━━</span>LOCATION & DIRECTION
         </h2>
 
         {/* Accordion Items */}

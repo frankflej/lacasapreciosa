@@ -49,8 +49,8 @@ export default function Facilities() {
   return (
     <section className=" px-20 py-12 font-serif bg-gray-50">
       {/* Section Title */}
-      <h2 className="text-3xl font-semibold mb-8 flex items-start text-black">
-        <span className="w-10 h-[2px] bg-orange-400 mr-4"></span> FACILITIES
+      <h2 className="text-3xl  mb-8 flex items-start text-black">
+         <span className='w-16 h-1 mr-4 text-orange-400'>━━</span> FACILITIES
       </h2>
 
       {/* Grid Layout */}

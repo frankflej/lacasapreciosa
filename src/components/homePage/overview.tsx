@@ -28,15 +28,12 @@ export default function Overview() {
         {/* Left Side (Text) */}
         <div>
             <div className='flex items-start'>
-            <div className='w-16 h-1 bg-orange-400'></div>
-            <h1 className='text-3xl md:text-4xl font-semibold mb-4'>JODHPUR’S TIMELESS JEWEL<br/> OF GRANDEUR</h1>
+            
+            <h1 className='text-2xl md:text-4xl mb-4'><span className='w-16 h-1 mr-4 text-orange-400'>━━</span>La Perla Negra&apos;s Hidden Gem of Comfort & Luxury</h1>
             </div>
           <p className='text-gray-700 text-lg '>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-            Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the
-            more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cities
-            of the world in classical literature, discovered the undoubtable source. 
+           Escape to a place where elegance meets relaxation. Whether you&apos;re seeking a weekend getaway or a long, serene stay, our boutique stay offers a blend of modern comfort and timeless charm.
+Nestled in a picturesque setting, we provide beautifully designed rooms, top-tier amenities, and a warm, welcoming atmosphere. Unwind in style, explore the vibrant surroundings, and create unforgettable memories.
           </p>
         </div>
         {/* Right Side (Image) */}
