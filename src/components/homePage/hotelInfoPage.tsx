@@ -14,16 +14,16 @@ export default function HotelInfo() {
   return (
     <section className="  px-20 py-12 font-serif">
       {/* Section Title */}
-      <h2 className="text-3xl font-semibold mb-8 flex items-start text-black">
-        <span className="w-10 h-[2px] bg-orange-400 mr-4"></span> HOTEL INFORMATION
+      <h2 className="text-3xl  mb-8 flex items-start text-black">
+        <span className="w-16 h-1 mr-4 text-orange-400">━━</span> HOTEL INFORMATION
       </h2>
 
       {/* Grid Layout */}
       <div className="grid md:grid-cols-3 gap-8">
         {hotelDetails.map((item, index) => (
-          <div key={index} className="flex items-center justify-start space-x-3">
-            <span className="text-gray-700">{item.icon}</span>
-            <div>
+          <div key={index} className="flex items-center justify-center space-x-3">
+            <div className="text-gray-700">{item.icon}</div>
+            <div className="pb-6">
               <h3 className="text-md font-semibold">{item.title}</h3>
               <p className="text-[#c07b50] italic">{item.detail}</p>
               {item.sub && <p className="text-gray-600">{item.sub}</p>}

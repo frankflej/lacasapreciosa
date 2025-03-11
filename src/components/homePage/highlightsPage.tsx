@@ -9,14 +9,17 @@ const highlights = [
     {
       src: view,
       alt: "Historical Palace",
+      description: " Thoughtfully designed rooms with modern amenities."
     },
     {
       src: view,
       alt: "Royal Interior",
+      description: "Immerse yourself in the rich culture and heritage of la perla negra."
     },
     {
       src: view,
       alt: "Luxury Room",
+      description: "Personalized services to make your stay truly unforgettable."
     },
   ];
 
@@ -25,15 +28,13 @@ export default function Highlights() {
     <section className="  px-20 py-12 font-serif bg-gray-50">
       {/* Section Title */}
       <div className="lg:flex-row flex items-center justify-between flex-col">
-      <h2 className="text-3xl font-semibold mb-4 flex items-start text-black">
-        <span className="w-10 h-[2px] bg-orange-400  mr-4"></span> HIGHLIGHTS
+      <h2 className="text-3xl  mb-4 flex items-start text-black">
+        <span className='w-16 h-1 mr-4 text-orange-400'>━━</span> HIGHLIGHTS
       </h2>
 
       {/* Description */}
       <p className="text-gray-600 italic text-lg max-w-2xl mb-8">
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-        roots in a piece of classical Latin literature from 45 BC, making it over
-        2000 years old. Richard McClintock.
+       Discover a charming retreat where modern comfort meets timeless elegance. Our charming haven stay offers beautifully designed rooms, warm hospitality, and an unforgettable experience. Whether you&apos;re here for leisure or a getaway, indulge in a stay that blends luxury with a homely touch.
       </p>
       </div>
 
@@ -49,7 +50,7 @@ export default function Highlights() {
               className="rounded-lg w-full h-auto"
             />
             <p className="text-md text-gray-800 mt-2">
-              Contrary to popular belief, Lorem Ipsum belief.
+                  {item.description}
             </p>
           </div>
         ))}

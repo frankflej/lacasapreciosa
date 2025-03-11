@@ -1,5 +1,6 @@
 /* styles.css or styles/tailwind.css */
-@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@200;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -19,6 +20,11 @@
   }
 }
 
+html,
+body {
+  @apply p-0 m-0 scroll-smooth bg-[#f7f8fa] tracking-wide;
+  font-family: 'Newsreader', serif !important;
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -27,4 +33,12 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-family: 'Newsreader', serif !important;
+  
 }
+
+.kalnia-font {
+  font-family: 'Tangerine', cursive !important;
+}
+
+
