@@ -21,7 +21,7 @@ export default function HotelInfo() {
       {/* Grid Layout */}
       <div className="grid md:grid-cols-3 gap-8">
         {hotelDetails.map((item, index) => (
-          <div key={index} className="flex items-center justify-center space-x-3">
+          <div key={index} className="flex items-center justify-start md:justify-center space-x-3">
             <div className="text-gray-700">{item.icon}</div>
             <div className="pb-6">
               <h3 className="text-md font-semibold">{item.title}</h3>
