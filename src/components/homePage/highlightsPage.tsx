@@ -25,7 +25,7 @@ const highlights = [
 
 export default function Highlights() {
   return (
-    <section className="  px-20 py-12 font-serif bg-gray-50">
+    <section className="  md:px-20 px-8 py-12 font-serif bg-gray-50">
       {/* Section Title */}
       <div className="lg:flex-row flex items-center justify-between flex-col">
       <h2 className="text-3xl  mb-4 flex items-start text-black">

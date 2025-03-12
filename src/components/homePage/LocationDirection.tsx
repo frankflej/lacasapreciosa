@@ -9,7 +9,7 @@ const LocationDirection = () => {
   };
 
   return (
-    <section className=" px-20 py-12 grid md:grid-cols-2 gap-8 font-serif">
+    <section className=" md:px-20 px-8 py-12 grid md:grid-cols-2 gap-8 font-serif">
       {/* Left Side - Text Content */}
       <div>
         <h2 className="text-3xl mb-6 flex items-start text-black">
