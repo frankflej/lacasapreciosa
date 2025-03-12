@@ -7,6 +7,7 @@ import Facilities from './facilities';
 import LocationDirection from './LocationDirection';
 import PalacesCarousel from './PalacesCarousel';
 import Reviews from './reviews';
+import Footer from './footer';
 export default function Homepage() {
   return (
 <div>
@@ -18,6 +19,7 @@ export default function Homepage() {
     <LocationDirection/>
     <Reviews/>
     <PalacesCarousel/>
+    <Footer/>
 </div>
   );
 }

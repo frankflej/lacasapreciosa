@@ -3,6 +3,7 @@ import Image from "next/image";
 import view from "@/assets/view.png";
 import BorderMagic from "../button/button";
 import { HoverEffect } from "../ui/card-hover-effect";
+import MyReviews from "../ui/reviews";
 const facilities = [
   {
     title: "~Amory",
@@ -41,7 +42,8 @@ export default function Reviews() {
 
       {/* Grid Layout */}
       <div>
-     <HoverEffect items={facilities}/>
+     {/* <HoverEffect items={facilities}/> */}
+     <MyReviews/>
       </div>
     </section>
   );
