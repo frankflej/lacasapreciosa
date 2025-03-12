@@ -11,7 +11,7 @@ export default function Overview() {
   return (
     <div className='px-20 py-6 font-serif text-black'>
       {/* Navigation */}
-      <nav className='flex items-center justify-center border-b  gap-8 text-gray-600 text-sm uppercase tracking-wide'>
+      <nav className='hidden md:flex items-center justify-center border-b  gap-8 text-gray-600 text-sm uppercase tracking-wide'>
         {['OVERVIEW', 'ROOMS & SUITES', 'OFFERS', 'DINING', 'WELLNESS', 'EXPERIENCES', 'GALLERY'].map((tab) => (
           <button
             key={tab}

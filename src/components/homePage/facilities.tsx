@@ -73,7 +73,7 @@ export default function Facilities() {
             {/* Overlay */}
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-6">
               <h3 className="text-white text-xl font-bold">{facility.title}</h3>
-              <div className="flex gap-2 items-end justify-between">
+              <div className="flex flex-col md:flex-row gap-2 items-start md:items-end justify-between">
               <ul className="text-white text-sm space-y-1">
                 {facility.features.map((feature, idx) => (
                   <li key={idx}>• {feature}</li>
