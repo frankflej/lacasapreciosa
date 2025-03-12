@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import view from "@/assets/view.png";
+import BorderMagic from "../button/button";
 
 const facilities = [
   {
@@ -72,15 +73,13 @@ export default function Facilities() {
             {/* Overlay */}
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-6">
               <h3 className="text-white text-xl font-bold">{facility.title}</h3>
-              <div className="flex gap-2 items-center justify-between">
+              <div className="flex gap-2 items-end justify-between">
               <ul className="text-white text-sm space-y-1">
                 {facility.features.map((feature, idx) => (
                   <li key={idx}>• {feature}</li>
                 ))}
               </ul>
-              <button className="bg-[#c07b50] text-white px-4 py-2 text-sm rounded-md self-end">
-                See More
-              </button>
+              <BorderMagic buttonDetail='See More'/>
               </div>
             </div>
           </div>
