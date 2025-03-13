@@ -12,7 +12,7 @@ const hotelDetails = [
 
 export default function HotelInfo() {
   return (
-    <section className="  md:px-20 px-8 py-12 font-serif">
+    <section className="md:px-20 px-8 py-12 font-serif">
       {/* Section Title */}
       <h2 className="text-3xl  mb-8 flex items-start text-black">
         <span className="w-16 h-1 mr-4 text-orange-400">━━</span> HOTEL INFORMATION
