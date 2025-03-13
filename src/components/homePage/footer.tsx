@@ -110,7 +110,7 @@ export default function Footer () {
                   {section.label === "Location" && (
                     <div className="mt-6 space-y-4">
                       <p className="text-sm text-gray-400">
-                        Eastern Province, La Perla Negra, Muhazi
+                        Eastern Province, La Perla Negra, Lake Muhazi.
                       </p>
                       <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
                         <label className="block text-sm font-medium text-gray-300">
