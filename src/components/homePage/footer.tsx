@@ -9,15 +9,15 @@ export default function Footer () {
             items: [
                 {
                     href: 'javascript:void()',
-                    name: 'Home'
+                    name: 'Overview'
                 },
                 {
                     href: 'javascript:void()',
-                    name: 'About'
+                    name: 'Rooms&suites'
                 },
                 {
                     href: 'javascript:void()',
-                    name: 'Rooms'
+                    name: 'Dining'
                 },
                 {
                     href: 'javascript:void()',
@@ -25,7 +25,7 @@ export default function Footer () {
                 },
                 {
                     href: 'javascript:void()',
-                    name: 'Contact'
+                    name: 'Experience'
                 },
             ],
         },
