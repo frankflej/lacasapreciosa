@@ -1,9 +1,10 @@
 import Image from 'next/image';
-import diningImage from '@/assets/dining.jpg';
+import diningImage from '@/assets/dining.png';
+import Link from 'next/link';
 
 export default function Dining() {
   return (
-    <div className='px-20 py-6 font-serif text-black'>
+    <div className='md:px-20 px-8 py-6 font-serif text-black bg-white'>
       <div className='max-w-7xl mx-auto'>
         <div className='mb-16'>
           <h1 className='text-4xl font-bold mb-6 flex items-start'>
@@ -41,6 +42,9 @@ export default function Dining() {
           </div>
         </div>
       </div>
+      <Link href="/" className='text-orange-400 hover:text-orange-500'>
+            ← Back to Overview
+          </Link>
     </div>
   );
 }
