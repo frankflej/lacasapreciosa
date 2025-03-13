@@ -11,17 +11,26 @@ export default function Overview() {
   return (
     <div className='px-20 py-6 font-serif text-black'>
       {/* Navigation */}
-      <nav className='hidden md:flex items-center justify-center border-b  gap-8 text-gray-600 text-sm uppercase tracking-wide'>
-        {['OVERVIEW', 'ROOMS & SUITES', 'DINING', 'EXPERIENCES', 'GALLERY'].map((tab) => (
-          <button
-            key={tab}
-            className={`pb-2 border-b-2 transition-all duration-200 ${activeTab === tab ? 'border-orange-400 text-black' : 'border-transparent'}`}
-            onClick={() => setActiveTab(tab)}
-          >
-            {tab}
-          </button>
-        ))}
-      </nav>
+      <nav className='hidden md:flex items-center justify-center border-b gap-8 text-gray-600 text-sm uppercase tracking-wide'>
+  {['OVERVIEW', 'ROOMS & SUITES', 'OFFERS', 'DINING', 'WELLNESS', 'EXPERIENCES', 'GALLERY'].map((tab) => (
+    tab === 'OVERVIEW' ? (
+      <button
+        key={tab}
+        className={`pb-2 border-b-2 transition-all duration-200 ${activeTab === tab ? 'border-orange-400 text-black' : 'border-transparent'}`}
+      >
+        {tab}
+      </button>
+    ) : (
+      <Link
+        key={tab}
+        href={`/${tab.toLowerCase().replace(' & ', '-').replace(' ', '-')}`}
+        className={`pb-2 border-b-2 transition-all duration-200 ${activeTab === tab ? 'border-orange-400 text-black' : 'border-transparent'}`}
+      >
+        {tab}
+      </Link>
+    )
+  ))}
+</nav>
 
       {/* Content Section */}
       <div className='grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-16 mt-10 items-center justify-between'>
