@@ -6,7 +6,7 @@ import { useEffect, useState, useRef } from 'react';
 import { background, negra } from '@/assets';
 import { SparklesCore } from '@/components/ui/sparkles';
 import BorderMagic from '@/components/button/button';
-
+import Link from 'next/link';
 const Mybutton = dynamic(() => import('@/components/button/button'), { ssr: false });
 
 export default function Landingpage() {
@@ -34,7 +34,7 @@ export default function Landingpage() {
 
   return (
     <div 
-      className='relative h-screen flex flex-col justify-between px-[3rem] py-[1.5rem] bg-cover font-serif text-white'
+      className='relative h-screen flex flex-col justify-between md:px-[3rem] px-[1rem] py-[1.5rem] bg-cover font-serif text-white'
       style={{ backgroundImage: bgUrl ? `linear-gradient(to bottom,#0101018a,#0101018a), url(${bgUrl})` : 'none' }}
     >
       {/* Header */}
@@ -122,10 +122,11 @@ export default function Landingpage() {
       
       <CgClose className='text-[2rem] cursor-pointer' onClick={() => setNavOpen(false)} />
     </div>
-    <a href='#' className='hover:underline transition-all duration-300'>DESTINATIONS</a>
-    <a href='#' className='hover:underline transition-all duration-300'>HOTELS</a>
-    <a href='#' className='hover:underline transition-all duration-300'>DINING</a>
-    <a href='#' className='hover:underline transition-all duration-150'>MORE</a>
+   <Link href='/' className='hover:underline transition-all duration-300'>OVERVIEW</Link>
+    <Link href='/room' className='hover:underline transition-all duration-300'>ROOMS & SUITES</Link>
+    <Link href='/dinning' className='hover:underline transition-all duration-300'>DINING</Link>
+    <Link href='/experience' className='hover:underline transition-all duration-150'>EXPERIENCES</Link>
+    <Link href='/gallery' className='hover:underline transition-all duration-150'>GALLERY</Link>
   </nav>
 </div>
     </div>

@@ -1,19 +1,20 @@
 "use client";
 import { motion } from "framer-motion";
-import  BorderMagic  from "../button/button";
-import { useRef } from 'react';
+import BorderMagic from "../button/button";
+import { useRef, useState } from 'react';
+import Marquee from "react-fast-marquee";
 
 const facilities = [
   {
     id: 1,
     title: "Amory",
-    description: "From the moment we arrived, we were mesmerized by the beauty of this place! The architecture, the décor, and the overall ambiance create an unforgettable experience. Every corner is picture-perfect, and the attention to detail is truly remarkable. It’s a hidden gem in Jodhpur that I can’t wait to visit again!",
+    description: "From the moment we arrived, we were mesmerized by the beauty of this place! The architecture, the décor, and the overall ambiance create an unforgettable experience. Every corner is picture-perfect, and the attention to detail is truly remarkable. It's a hidden gem in Jodhpur that I can't wait to visit again!",
     rating: 5,
   },
   {
     id: 2,
     title: "Rick",
-    description: "Sailing on the boat was the highlight of our trip! The calm waters, the gentle breeze, and the breathtaking views made for an unforgettable experience. Watching the sunset while drifting peacefully was pure magic. If you visit, don’t miss the boat ride—it’s absolutely worth it!",
+    description: "Sailing on the boat was the highlight of our trip! The calm waters, the gentle breeze, and the breathtaking views made for an unforgettable experience. Watching the sunset while drifting peacefully was pure magic. If you visit, don't miss the boat ride—it's absolutely worth it!",
     rating: 5,
   },
   {
@@ -38,12 +39,13 @@ const facilities = [
 
 export default function Reviews() {
   const containerRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto" ref={containerRef}>
         {/* Section Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-5 md:mb-10 text-center">
           <div className="inline-flex items-center mb-4">
             <div className="h-[2px] w-16 bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
             <span className="mx-4 text-sm font-semibold tracking-wider text-amber-600 uppercase">
@@ -51,23 +53,16 @@ export default function Reviews() {
             </span>
             <div className="h-[2px] w-16 bg-gradient-to-l from-transparent via-amber-500 to-transparent" />
           </div>
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+          <h2 className="text-3xl  tracking-tight text-gray-900 sm:text-4xl">
             What Our Guests Say
           </h2>
         </div>
 
         {/* Infinite Carousel */}
         <div className="relative py-12 w-full overflow-x-hidden">
-          <motion.div 
-            className="flex w-max"
-            animate={{ x: ['0%', '-50%'] }}
-            transition={{
-              duration: 40,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          >
-            {[...facilities, ...facilities].map((review, idx) => (
+
+<Marquee  pauseOnHover={true}>
+            {facilities.map((review, idx) => (
               <div 
                 key={`${review.id}-${idx}`} 
                 className="w-[400px] mx-4 p-6 bg-gradient-to-br from-white to-slate-50 rounded-2xl shadow-xl 
@@ -96,7 +91,7 @@ export default function Reviews() {
                 </div>
                 <blockquote className="relative">
                   <div className="absolute top-0 left-0 transform -translate-y-6 text-6xl opacity-10 text-amber-500 font-serif">
-                    “
+                    &ldquo;
                   </div>
                   <p className="relative z-10 text-gray-600 leading-relaxed">
                     {review.description}
@@ -104,7 +99,7 @@ export default function Reviews() {
                 </blockquote>
               </div>
             ))}
-          </motion.div>
+          </Marquee>
 
           {/* Gradient Overlays */}
           <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-50 to-transparent z-20" />
@@ -112,7 +107,7 @@ export default function Reviews() {
         </div>
 
         {/* CTA Button */}
-        <div className="mt-12 text-center">
+        <div className="mt-5 md:mt-10  text-center">
           <BorderMagic
             buttonDetail="Submit A Review"
             className="bg-gradient-to-r from-gray-500 to-gray-600 hover:from-amber-600 hover:to-amber-700 text-gray-950 px-8 py-4 rounded-xl font-semibold transform hover:scale-105 transition-all duration-300"

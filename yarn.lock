@@ -5521,6 +5521,7 @@ __metadata:
     react: "npm:^18"
     react-dom: "npm:^18"
     react-element-to-jsx-string: "npm:^17.0.0"
+    react-fast-marquee: "npm:^1.6.5"
     react-hook-form: "npm:^7.48.2"
     react-icons: "npm:^4.11.0"
     tailwind-merge: "npm:^3.0.2"
@@ -6683,6 +6684,16 @@ __metadata:
     react-dom: ^19.0.0
     react-is: ^19.0.0
   checksum: 10c0/2193cd7df4fd15e902e235054026435b6d45cac984fa0111ec5239a13312423238da0e4e09aa8d86c34e4f2715499b452c542e21131273db4708080858b0e11c
+  languageName: node
+  linkType: hard
+
+"react-fast-marquee@npm:^1.6.5":
+  version: 1.6.5
+  resolution: "react-fast-marquee@npm:1.6.5"
+  peerDependencies:
+    react: ">= 16.8.0 || ^18.0.0"
+    react-dom: ">= 16.8.0 || ^18.0.0"
+  checksum: 10c0/ea2378c4cd1eb323d004e8c2ff6222a7a4def311e00f0bd0c99adebc906aa56a078c2101b3c6697109b15dcf177bfa31edd95b9f7a114887072e3103fe234ecd
   languageName: node
   linkType: hard
 
