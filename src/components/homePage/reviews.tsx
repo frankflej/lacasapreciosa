@@ -115,7 +115,7 @@ export default function Reviews() {
         <div className="mt-12 text-center">
           <BorderMagic
             buttonDetail="Submit a Review"
-            className="bg-gradient-to-r from-gray-300 to-gray-400 hover:from-gray-800 hover:to-gray-600 text-white px-8 py-4 rounded-xl font-semibold transform hover:scale-105 transition-all duration-300"
+            className="bg-gradient-to-r from-gray-300 to-gray-400 text-white px-8 py-4 rounded-xl font-semibold "
           />
         </div>
       </div>
