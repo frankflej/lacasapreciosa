@@ -4,25 +4,40 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
 import imgSrc from '@/assets/view.png';
+import { usePathname } from 'next/navigation';
 
 export default function Overview() {
   const [activeTab, setActiveTab] = useState('OVERVIEW');
+  const pathname = usePathname();
+
+  //navigation items with their paths
+  const navItems = [
+    { name: 'OVERVIEW', path: '/' },
+    { name: 'ROOMS & SUITES', path: '/room' },
+    { name: 'DINING', path: '/dinning' },
+    { name: 'EXPERIENCES', path: '/experience' },
+    { name: 'GALLERY', path: '/gallery' },
+  ];
+  
 
   return (
     <div className=' md:px-20 px-8 py-6 font-serif text-black'>
       {/* Navigation */}
-      <nav className='hidden md:flex items-center justify-center border-b  gap-8 text-gray-600 text-sm uppercase tracking-wide'>
-        {['OVERVIEW', 'ROOMS & SUITES', 'DINING', 'EXPERIENCES', 'GALLERY'].map((tab) => (
-          <button
-            key={tab}
-            className={`pb-2 border-b-2 transition-all duration-200 ${activeTab === tab ? 'border-orange-400 text-black' : 'border-transparent'}`}
-            onClick={() => setActiveTab(tab)}
+      <nav className='hidden md:flex items-center justify-center border-b gap-8 text-gray-600 text-sm uppercase tracking-wide'>
+        {navItems.map((item) => (
+          <Link
+            key={item.name}
+            href={item.path}
+            className={`pb-2 border-b-2 transition-all duration-200 ${
+              pathname === item.path 
+                ? 'border-orange-400 text-black' 
+                : 'border-transparent hover:border-orange-200'
+            }`}
           >
-            {tab}
-          </button>
+            {item.name}
+          </Link>
         ))}
       </nav>
-
       {/* Content Section */}
       <div className='grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-16 mt-10 items-center justify-between'>
         {/* Left Side (Text) */}
