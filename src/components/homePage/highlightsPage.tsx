@@ -4,20 +4,21 @@ import view from "@/assets/view.png";
 import two from "@/assets/2.png";
 import one from "@/assets/1.jpg";
 import three from "@/assets/3.png"
+import { highlightsImg1,highlightsImg2,highlightsImg3 } from "@/assets";
 
 const highlights = [
     {
-      src: view,
+      src: highlightsImg1,
       alt: "Historical Palace",
       description: " Thoughtfully designed rooms with modern amenities."
     },
     {
-      src: view,
+      src: highlightsImg2,
       alt: "Royal Interior",
       description: "Immerse yourself in the rich culture and heritage of la perla negra."
     },
     {
-      src: view,
+      src: highlightsImg3,
       alt: "Luxury Room",
       description: "Personalized services to make your stay truly unforgettable."
     },

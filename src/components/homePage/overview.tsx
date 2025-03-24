@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
 import imgSrc from '@/assets/view.png';
-import { now } from '@/assets';
+import { overviewImg } from '@/assets';
 import { usePathname } from 'next/navigation';
 
 export default function Overview() {
@@ -54,7 +54,7 @@ Nestled in a picturesque setting, we provide beautifully designed rooms, top-tie
         </div>
         {/* Right Side (Image) */}
         <div>
-          <Image src={now} alt='Jodhpur Palace' className='rounded-lg shadow-lg w-full' width={500} height={500} />
+          <Image src={overviewImg} alt='Jodhpur Palace' className='rounded-lg shadow-lg w-full' width={500} height={500} />
         </div>
       </div>
     </div>

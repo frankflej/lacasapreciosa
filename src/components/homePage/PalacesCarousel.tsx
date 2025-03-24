@@ -2,19 +2,20 @@
 import { useState } from "react";
 import Image from "next/image";
 import view from "@/assets/view.png";
+import { locationImg1, highlightsImg1} from "@/assets";
 
 const palaces = [
   {
     title: "PALACES",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
-    image: view,
+    image: locationImg1,
   },
   {
     title: "FORTS",
     description:
       "Another fascinating historical monument with an incredible story...",
-    image: view,
+    image: highlightsImg1,
   },
 ];
 
