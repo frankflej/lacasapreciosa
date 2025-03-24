@@ -2,11 +2,13 @@
 import Image from "next/image";
 import view from "@/assets/view.png";
 import BorderMagic from "../button/button";
+import dining from "@/assets/dining.png";
+import { facilitiesImg1, facilitiesImg2, facilitiesImg3 } from "@/assets";
 
 const facilities = [
   {
     title: "HOTEL",
-    image: view,
+    image: facilitiesImg1,
     features: [
       "Currency Exchange",
       "Baby – Sitter",
@@ -18,7 +20,7 @@ const facilities = [
   },
   {
     title: "DINING",
-    image: view,
+    image: dining,
     features: [
       "Risala (Fine-Dining, Continental & Indian Restaurant)",
       "Pillars (Multinational Cuisine)",
@@ -27,7 +29,7 @@ const facilities = [
   },
   {
     title: "WELLNESS",
-    image: view,
+    image: facilitiesImg2,
     features: [
       "Heated Swimming Pool",
       "Indoor Swimming Pool",
@@ -37,7 +39,7 @@ const facilities = [
   },
   {
     title: "ROOMS",
-    image: view,
+    image: facilitiesImg3,
     features: [
       "Risala (Fine-Dining, Continental & Indian Restaurant)",
       "Pillars (Multinational Cuisine)",
