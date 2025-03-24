@@ -3,7 +3,7 @@ import { CgClose, CgMenu } from 'react-icons/cg';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
-import { background, negra } from '@/assets';
+import { background, negra,now } from '@/assets';
 import { SparklesCore } from '@/components/ui/sparkles';
 import BorderMagic from '@/components/button/button';
 import Link from 'next/link';
