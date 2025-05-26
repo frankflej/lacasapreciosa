@@ -45,7 +45,7 @@ export default function Overview() {
         <div>
             <div className='flex items-start'>
             
-            <h1 className='text-2xl md:text-4xl mb-4'><span className='w-16 h-1 mr-4 text-orange-400'>━━</span>La Perla Negra&apos;s Hidden Gem of Comfort & Luxury</h1>
+            <h1 className='text-2xl md:text-4xl mb-4'><span className='w-16 h-1 mr-4 text-orange-400'>━━</span>La Perla Negra&apos;s Hidden Gem of Comfort & Luxury-</h1>
             </div>
           <p className='text-gray-700 text-lg '>
            Escape to a place where elegance meets relaxation. Whether you&apos;re seeking a weekend getaway or a long, serene stay, our boutique stay offers a blend of modern comfort and timeless charm.
