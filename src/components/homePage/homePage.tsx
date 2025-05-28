@@ -38,6 +38,8 @@ export default function Landingpage() {
         desktopImage={backgroundImages.desktop}
         alt="La Perla Negra Background"
         priority={true}
+        enableSlideshow={true}
+        slideInterval={4000} // Change image every 4 seconds
       />
       
       {/* Overlay Layer - You can customize the opacity and colors */}
