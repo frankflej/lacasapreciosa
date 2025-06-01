@@ -1,36 +1,33 @@
-
 import Image from 'next/image';
 import Link from 'next/link';
 import kayakImage from '@/assets/kayak.jpg';
-import poolImage from '@/assets/pool.png';
-import volleyballImage from '@/assets/volley.jpg';
-import fireplaceImage from '@/assets/fire.jpg';
+
 
 export default function Experiences() {
   const activities = [
     {
-      title: "Lake Kayaking",
-      image: kayakImage,
-      description: "Explore crystal-clear waters with our guided kayak tours. Suitable for all skill levels, discover hidden coves and marine life.",
-      highlights: ["Morning & sunset tours", "Equipment provided", "Family-friendly"]
+      title: "Cave Dancing",
+      image: "https://ik.imagekit.io/pqgw24nd3/IMG_0419.jpg?updatedAt=1746471971441",
+      description: "Experience the magic of our natural cave venue where you can dance and celebrate. The unique acoustics and ambiance create an unforgettable atmosphere.",
+      highlights: ["Live DJ sessions", "Natural acoustics", "Unique atmosphere"]
     },
     {
-      title: "Infinity Pool",
-      image: poolImage,
-      description: "Unwind in our stunning Lake-view infinity pool featuring swim-up bar and private cabanas.",
-      highlights: ["24-hour access", "Poolside service", "Adult-only section"]
+      title: "Boat Tours",
+      image: "https://ik.imagekit.io/pqgw24nd3/IMG_0479.jpg?updatedAt=1746472131940",
+      description: "Cruise around the pristine lake waters with our comfortable boats. Enjoy scenic views and discover hidden spots around the lake.",
+      highlights: ["Guided tours available", "Scenic lake views", "Multiple departure times"]
     },
     {
-      title: "Beach Volleyball",
-      image: volleyballImage,
-      description: "Join daily tournaments or casual games on our pristine white sand courts.",
-      highlights: ["Professional coaching", "Night lighting", "Equipment rental"]
+      title: "Outdoor Chill Lounge",
+      image: "https://ik.imagekit.io/pqgw24nd3/IMG_2623.jpg?updatedAt=1748776843615",
+      description: "Relax in our outdoor lounge area with comfortable seating and refreshing drinks. Perfect for unwinding while enjoying nature.",
+      highlights: ["Premium cocktails", "Comfortable seating", "Natural surroundings"]
     },
     {
-      title: "Beachside Fire Pit",
-      image: fireplaceImage,
-      description: "Evening gatherings around our artisan fire pits with s'mores kits and cocktail service.",
-      highlights: ["Private bookings available", "Live music nights", "Sunset sessions"]
+      title: "Lakeside Fire Pit",
+      image: "https://ik.imagekit.io/pqgw24nd3/IMG_2621.jpg?updatedAt=1748776523128",
+      description: "Gather around our cozy fire pit by the lake for an intimate evening experience. Perfect for relaxation and socializing under the stars.",
+      highlights: ["Lakeside location", "Evening ambiance", "Social gathering spot"]
     }
   ];
 
@@ -101,7 +98,7 @@ export default function Experiences() {
         <div className='mt-16 text-center bg-gradient-to-r from-blue-50 to-orange-50 rounded-2xl p-12'>
           <h2 className='text-3xl font-bold mb-4'>Plan Your Beach Escape</h2>
           <p className='text-gray-600 mb-8 max-w-2xl mx-auto'>
-            Our concierge team can help customize your perfect day - whether you're seeking 
+            Our concierge team can help customize your perfect day - whether you&apos;re seeking 
             adventure-packed activities or pure relaxation by the waves.
           </p>
           <Link
