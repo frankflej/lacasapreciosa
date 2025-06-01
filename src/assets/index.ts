@@ -18,23 +18,23 @@ export const locationImg2 = "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra
 // Responsive background images
 export const backgroundImages = {
   mobile: [
-    "https://ik.imagekit.io/pqgw24nd3/IMG_2589.jpg?updatedAt=1748460748555", // Portrait oriented for mobile
-    "https://ik.imagekit.io/pqgw24nd3/IMG_0437.jpg?updatedAt=1746472051574",
-    "https://ik.imagekit.io/pqgw24nd3/IMG_0437.jpg?updatedAt=1746472051574",
-    "https://ik.imagekit.io/pqgw24nd3/IMG_0477.jpg?updatedAt=1746472148800"
+    "https://ik.imagekit.io/pqgw24nd3/IMG_0437.jpg?updatedAt=1746472051574", // Portrait oriented for mobile
+    // "https://ik.imagekit.io/pqgw24nd3/IMG_0437.jpg?updatedAt=1746472051574",
+    // "https://ik.imagekit.io/pqgw24nd3/IMG_0437.jpg?updatedAt=1746472051574",
+    // "https://ik.imagekit.io/pqgw24nd3/IMG_0477.jpg?updatedAt=1746472148800"
   ],
   tablet: [
     "https://ik.imagekit.io/pqgw24nd3/001_01%20(1).jpg?updatedAt=1748284302828", // Good for tablet
-    "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20wide%20(4).jpg?updatedAt=1742843757704",
-    "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20wide%20(2).jpg?updatedAt=1742843747664",
-    "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20Min%20Bar.jpg?updatedAt=1742843672148"
+    // "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20wide%20(4).jpg?updatedAt=1742843757704",
+    // "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20wide%20(2).jpg?updatedAt=1742843747664",
+    // "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20Min%20Bar.jpg?updatedAt=1742843672148"
   ],
   desktop: [
     "https://ik.imagekit.io/pqgw24nd3/001_01%20(1).jpg?updatedAt=1748284302828", // Your current desktop image
-    "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20wide%20(4).jpg?updatedAt=1742843757704",
-    "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20wide%20(2).jpg?updatedAt=1742843747664",
-    "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20outdoor%20barcony%20(2).jpg?updatedAt=1742843697804",
-    "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20master%20bedroom%20I%20(4).jpg?updatedAt=1742843687824"
+    // "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20wide%20(4).jpg?updatedAt=1742843757704",
+    // "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20wide%20(2).jpg?updatedAt=1742843747664",
+    // "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20outdoor%20barcony%20(2).jpg?updatedAt=1742843697804",
+    // "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20master%20bedroom%20I%20(4).jpg?updatedAt=1742843687824"
   ]
 };
 

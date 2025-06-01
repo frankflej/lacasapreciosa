@@ -38,7 +38,7 @@ export default function Landingpage() {
         desktopImage={backgroundImages.desktop}
         alt="La Perla Negra Background"
         priority={true}
-        enableSlideshow={true}
+        enableSlideshow={false}
         slideInterval={4000} // Change image every 4 seconds
       />
       
@@ -78,7 +78,7 @@ export default function Landingpage() {
                   />
                 </div>
                 <div className='flex flex-col items-center gap-2'>
-                  <p className='text-[5.5rem] font-bold kalnia-font'>La Perla Negra</p>
+                  <p className='text-[5.5rem] md:text-[7rem] font-bold kalnia-font '>La Perla Negra</p>
                   <div className='flex items-center gap-2'>
                     <p className='text-xs md:text-[1.5rem] mr-2 '>≿━━━━༺</p>
                     <p className='text-xs md:text-[1.5rem]  '>Where Tranquility Meets Endless Beauty</p>
