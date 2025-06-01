@@ -18,6 +18,7 @@ export default function Overview() {
     { name: 'DINING', path: '/dinning' },
     { name: 'EXPERIENCES', path: '/experience' },
     { name: 'GALLERY', path: '/gallery' },
+    { name: 'CONTACT', path: '/contact' },
   ];
   
 
