@@ -48,7 +48,7 @@ export default function Highlights() {
               alt={item.alt}
               width={350}
               height={250}
-              className="rounded-lg w-full h-auto"
+              className="rounded-lg w-full h-64 object-cover"
             />
             <p className="text-md text-gray-800 mt-2">
                   {item.description}
