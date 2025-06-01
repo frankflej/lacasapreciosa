@@ -2,6 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import roomImage from '@/assets/background.jpg';
 
+
+// export const roomImage = "https://ik.imagekit.io/pqgw24nd3/IMG_0321.jpg?updatedAt=1746471822700"
+const roomPics = [
+  "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20master%20bedroom%20I%20(6).jpg?updatedAt=1742843628211",
+  "https://ik.imagekit.io/pqgw24nd3/IMG_0308.jpg?updatedAt=1746471827272",
+  "https://ik.imagekit.io/pqgw24nd3/IMG_0363.jpg?updatedAt=1746471931454",
+
+]
 export default function RoomsSuites() {
   return (
     <div className='md:px-20 px-8 py-6 font-serif text-black bg-white'>
@@ -24,18 +32,18 @@ export default function RoomsSuites() {
 
         {/* Room Types */}
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-          {[1, 2, 3].map((room) => (
-            <div key={room} className='group relative overflow-hidden rounded-xl '>
+          {roomPics.map((room, index) => (
+            <div key={index} className='group relative overflow-hidden rounded-xl '>
               <div className='relative h-64 bg-gray-50'>
                 <Image
-                  src={roomImage}
+                  src={room}
                   alt={`Room ${room}`}
                   fill
                   className='object-cover transition-transform duration-300 group-hover:scale-105'
                 />
               </div>
               <div className='p-6  bg-gray-100'>
-                <h3 className='text-xl font-semibold mb-2'>Premium Suite {room}</h3>
+                <h3 className='text-xl font-semibold mb-2'>Premium Suite </h3>
                 <p className='text-gray-600 mb-4'>Starting from $299/night</p>
                 <Link
                   href='#'
