@@ -61,7 +61,7 @@ export default function Facilities() {
         {facilities.map((facility, index) => (
           <div
             key={index}
-            className="relative h-64 rounded-lg overflow-hidden group"
+            className="relative  md:h-96 h-64 rounded-lg overflow-hidden group"
           >
             {/* Background Image */}
             <Image

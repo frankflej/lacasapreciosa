@@ -6,10 +6,10 @@ export {default as negra} from './negra2.jpg'
 export const overviewImg = "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20outdoor%20barcony%20(2).jpg?updatedAt=1742843697804"
 export const highlightsImg1 = "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20Min%20Bar.jpg?updatedAt=1742843672148"
 export const highlightsImg2 = "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20master%20bedroom%20I%20(4).jpg?updatedAt=1742843687824"
-export const highlightsImg3 = "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20wide%20(4).jpg?updatedAt=1742843757704"
+export const highlightsImg3 = "https://ik.imagekit.io/pqgw24nd3/IMG_2589.jpg?updatedAt=1748460748555"
 
 export const facilitiesImg1 = "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20wide%20(2).jpg?updatedAt=1742843747664"
-export const facilitiesImg2 = "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20club.jpg?updatedAt=1742843563693"
+export const facilitiesImg2 = "https://ik.imagekit.io/pqgw24nd3/IMG_0483.jpg?updatedAt=1746472144410"
 export const facilitiesImg3 = "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20master%20bedroom%20II%20(6).jpg?updatedAt=1742843655906"
 
 export const locationImg1 = "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20master%20Bathroom%20II.jpg?updatedAt=1742843602673"
