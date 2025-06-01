@@ -107,10 +107,11 @@ export default function Reviews() {
         </div>
 
         {/* CTA Button */}
-        <div className="mt-5 md:mt-10  text-center">
+        <div className="mt-5 md:mt-10 text-center">
           <BorderMagic
             buttonDetail="Submit A Review"
-            className="bg-gradient-to-r from-gray-500 to-gray-600 hover:from-amber-600 hover:to-amber-700 text-gray-950 px-8 py-4 rounded-xl font-semibold transform hover:scale-105 transition-all duration-300"
+            href="/reviews"
+            className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-8 py-4 rounded-xl font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           />
         </div>
       </div>

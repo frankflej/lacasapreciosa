@@ -57,7 +57,7 @@ export default function Landingpage() {
           </div>
 
           <div className='flex items-center gap-4 text-[0.8rem]'>
-            <BorderMagic buttonDetail='BOOK A STAY'/>
+            <BorderMagic buttonDetail='BOOK A STAY' href='/booking'/>
           </div>
         </header>
         
@@ -112,6 +112,7 @@ export default function Landingpage() {
             <Link href='/dinning' className='hover:underline transition-all duration-300'>DINING</Link>
             <Link href='/experience' className='hover:underline transition-all duration-150'>EXPERIENCES</Link>
             <Link href='/gallery' className='hover:underline transition-all duration-150'>GALLERY</Link>
+            <Link href='/contact' className='hover:underline transition-all duration-150'>CONTACT</Link>
           </nav>
         </div>
       </div>

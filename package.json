@@ -10,6 +10,7 @@
     "codegen": "env-cmd -f .env.example graphql-codegen --config codegen.ts -r "
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@graphql-codegen/cli": "^5.0.5",
     "@graphql-codegen/client-preset": "^4.7.0",
     "@graphql-codegen/introspection": "^4.0.3",
