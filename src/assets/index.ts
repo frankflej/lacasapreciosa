@@ -18,7 +18,7 @@ export const locationImg2 = "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra
 // Responsive background images
 export const backgroundImages = {
   mobile: [
-    "https://ik.imagekit.io/pqgw24nd3/IMG_0437.jpg?updatedAt=1746472051574", // Portrait oriented for mobile
+    "https://ik.imagekit.io/pqgw24nd3/001_3.jpg?updatedAt=1749098480925", // Portrait oriented for mobile
     // "https://ik.imagekit.io/pqgw24nd3/IMG_0437.jpg?updatedAt=1746472051574",
     // "https://ik.imagekit.io/pqgw24nd3/IMG_0437.jpg?updatedAt=1746472051574",
     // "https://ik.imagekit.io/pqgw24nd3/IMG_0477.jpg?updatedAt=1746472148800"
