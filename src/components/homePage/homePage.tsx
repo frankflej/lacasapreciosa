@@ -9,6 +9,7 @@ import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import Link from 'next/link';
 import { ResponsiveBackgroundImage } from '@/components/ui/ResponsiveBackgroundImage';
 import BorderMagic from '@/components/button/button';
+import { TextAnimate } from "@/components/magicui/text-animate";
 const Mybutton = dynamic(() => import('@/components/button/button'), { ssr: false });
 
 export default function Landingpage() {
@@ -70,17 +71,19 @@ export default function Landingpage() {
                     background="transparent"
                     minSize={0.6}
                     maxSize={1.4}
-                    particleDensity={30}
+                    particleDensity={100}
                     className="w-full h-full"
                     particleColor="#FFFFFF"
                   />
                 </div>
                 <div className='flex flex-col items-center gap-2'>
-                  <p className='text-[5.5rem] md:text-[7rem] font-bold kalnia-font '>La Perla Negra</p>
+                  <p className='text-[5.5rem] md:text-[7rem] font-bold kalnia-font '>
+                    <TextAnimate animation="blurInUp" by="character" once>La Perla Negra</TextAnimate></p>
                   <div className='flex items-center gap-2'>
-                    <p className='text-[1.3rem] md:text-[1.5rem] mr-2 '>≿━━━━༺</p>
-                    <p className='text-[1.3rem] md:text-[1.5rem]  '>Where Tranquility Meets Endless Beauty</p>
-                    <p className='text-[1.3rem] md:text-[1.5rem] ml-2 '>≿━━━━༺</p>
+                     
+                    <p className='text-[1.3rem] md:text-[1.5rem] mr-2 '> <TextAnimate animation="blurInUp" by="character" once>≿━━━━༺</TextAnimate></p>
+                    <p className='text-[1.3rem] md:text-[1.5rem]  '> <TextAnimate animation="blurInUp" by="character" once>Where Tranquility Meets Endless Beauty</TextAnimate></p>
+                    <p className='text-[1.3rem] md:text-[1.5rem] ml-2 '> <TextAnimate animation="blurInUp" by="character" once>≿━━━━༺</TextAnimate></p>
                   </div>
                     <div className='flex items-center gap-4 text-[0.8rem] pt-7 md:pt-[4rem]'>
                  <BorderMagic buttonDetail='BOOK A STAY' href='/booking'/>
