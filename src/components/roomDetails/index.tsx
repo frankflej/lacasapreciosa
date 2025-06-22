@@ -16,6 +16,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TextAnimate } from "@/components/magicui/text-animate";
 // import BackButton from "@/components/ui/back-button";
 import { useRouter } from "next/navigation";
+import BackButton from "@/components/button/backButton";
 
 // Placeholder data for a single room.
 // In a real application, you would fetch this data based on the `params.id`.
@@ -162,9 +163,9 @@ export default function RoomDetailsPage() {
             </Card>
           </aside>
         </div>
-        {/* <div className="flex justify-start mt-7 mb-4">
+        <div className="flex justify-start mt-7 mb-4">
              <BackButton />
-             </div> */}
+             </div>
     
       </main>
              

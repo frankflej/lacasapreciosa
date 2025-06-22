@@ -17,6 +17,7 @@ const facilities = [
       "Games Room",
       "Helipad",
     ],
+    link: "/gallery",
   },
   {
     title: "DINING",
@@ -26,6 +27,7 @@ const facilities = [
       "Pillars (Multinational Cuisine)",
       "Trophy Bar",
     ],
+    link: "/dining",
   },
   {
     title: "WELLNESS",
@@ -36,6 +38,7 @@ const facilities = [
       "J Wellness Circle Spa",
       "Outdoor Swimming Pool",
     ],
+    link: "/wellness",
   },
   {
     title: "ROOMS",
@@ -44,7 +47,8 @@ const facilities = [
       "Risala (Fine-Dining, Continental & Indian Restaurant)",
       "Pillars (Multinational Cuisine)",
       "Trophy Bar",
-    ],
+    ],  
+    link: "/room",
   },
 ];
 
@@ -81,7 +85,7 @@ export default function Facilities() {
                   <li key={idx}>• {feature}</li>
                 ))}
               </ul>
-              <BorderMagic buttonDetail='See More'/>
+              <BorderMagic buttonDetail='See More' href={facility.link}/>
               </div>
             </div>
           </div>
