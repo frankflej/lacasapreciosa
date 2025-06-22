@@ -14,7 +14,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import BackButton from "@/components/ui/back-button";
+// import BackButton from "@/components/ui/back-button";
 import { useRouter } from "next/navigation";
 
 // Placeholder data for a single room.
@@ -162,9 +162,9 @@ export default function RoomDetailsPage() {
             </Card>
           </aside>
         </div>
-        <div className="flex justify-start mt-7 mb-4">
+        {/* <div className="flex justify-start mt-7 mb-4">
              <BackButton />
-             </div>
+             </div> */}
     
       </main>
              

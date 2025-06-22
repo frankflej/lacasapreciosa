@@ -5,10 +5,24 @@ import roomImage from '@/assets/background.jpg';
 
 // export const roomImage = "https://ik.imagekit.io/pqgw24nd3/IMG_0321.jpg?updatedAt=1746471822700"
 const roomPics = [
-  "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20master%20bedroom%20I%20(6).jpg?updatedAt=1742843628211",
-  "https://ik.imagekit.io/pqgw24nd3/IMG_0308.jpg?updatedAt=1746471827272",
-  "https://ik.imagekit.io/pqgw24nd3/IMG_0363.jpg?updatedAt=1746471931454",
-
+  {
+    name: "Premium Suite",
+    image: "https://ik.imagekit.io/pqgw24nd3/IMG_0308.jpg?updatedAt=1746471827272",
+    description: "Starting from $299/night",
+    link: "/room/1",
+  },
+  {
+    name: "Premium Suite",
+    image: "https://ik.imagekit.io/pqgw24nd3/IMG_0308.jpg?updatedAt=1746471827272",
+    description: "Starting from $299/night",
+    link: "/room/2",
+  },
+  {
+    name: "Premium Suite",
+    image: "https://ik.imagekit.io/pqgw24nd3/IMG_0363.jpg?updatedAt=1746471931454",
+    description: "Starting from $299/night",
+    link: "/room/3",
+  },
 ]
 export default function RoomsSuites() {
   return (
@@ -36,17 +50,17 @@ export default function RoomsSuites() {
             <div key={index} className='group relative overflow-hidden rounded-xl '>
               <div className='relative h-64 bg-gray-50'>
                 <Image
-                  src={room}
-                  alt={`Room ${room}`}
+                  src={room.image}
+                  alt={`Room ${room.name}`}
                   fill
                   className='object-cover transition-transform duration-300 group-hover:scale-105'
                 />
               </div>
               <div className='p-6  bg-gray-100'>
-                <h3 className='text-xl font-semibold mb-2'>Premium Suite </h3>
-                <p className='text-gray-600 mb-4'>Starting from $299/night</p>
+                <h3 className='text-xl font-semibold mb-2'>{room.name} </h3>
+                <p className='text-gray-600 mb-4'>{room.description}</p>
                 <Link
-                  href='#'
+                  href={room.link}
                   className='text-orange-400 hover:text-orange-500 font-medium'
                 >
                   Explore Suite →
