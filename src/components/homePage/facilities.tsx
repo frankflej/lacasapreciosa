@@ -38,7 +38,7 @@ const facilities = [
       "J Wellness Circle Spa",
       "Outdoor Swimming Pool",
     ],
-    link: "/wellness",
+    link: "/experience",
   },
   {
     title: "ROOMS",

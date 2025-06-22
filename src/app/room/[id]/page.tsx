@@ -1,5 +1,5 @@
 import RoomDetailsPage from "@/components/roomDetails";
 
-export default function RoomDetails({ params }: { params: { id: string } }) {
+export default function RoomDetails() {
   return <RoomDetailsPage />;
 }
