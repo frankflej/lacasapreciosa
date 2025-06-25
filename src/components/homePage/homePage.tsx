@@ -78,7 +78,7 @@ export default function Landingpage() {
                 </div>
                 <div className='flex flex-col items-center gap-2'>
                   <p className='text-[5.5rem] md:text-[7rem] font-bold kalnia-font '>
-                    <TextAnimate animation="blurInUp" by="character" once>La Perla Negra</TextAnimate></p>
+                    <TextAnimate animation="blurInUp" by="character">La Perla Negra</TextAnimate></p>
                   <div className='flex items-center gap-2'>
                      
                     <p className='text-[1.3rem] md:text-[1.5rem] mr-2 '> <TextAnimate animation="blurInUp" by="character" once>≿━━━━༺</TextAnimate></p>
