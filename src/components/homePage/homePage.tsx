@@ -64,7 +64,7 @@ export default function Landingpage() {
         <div className='h-screen flex flex-col'>
           <main className='text-center flex flex-col items-center justify-center flex-1'>
             <div className='flex flex-col items-center gap-6'>
-              <div className="relative w-full h-[20rem] flex flex-col items-center justify-center overflow-hidden rounded-md">
+              <div className="relative w-full h-[25rem] flex flex-col items-center justify-center overflow-hidden rounded-md">
                 <div className="w-full absolute inset-0 h-screen">
                   <SparklesCore
                     id="tsparticlesfullpage"
@@ -77,15 +77,15 @@ export default function Landingpage() {
                   />
                 </div>
                 <div className='flex flex-col items-center gap-2'>
-                  <p className='text-[5.5rem] md:text-[7rem] font-bold kalnia-font '>
+                  <p className='text-[4rem] md:text-[7rem] font-bold kalnia-font '>
                     <TextAnimate animation="blurInUp" by="character">La Perla Negra</TextAnimate></p>
                   <div className='flex items-center gap-2'>
                      
-                    <p className='text-[1.3rem] md:text-[1.5rem] mr-2 '> <TextAnimate animation="blurInUp" by="character" once>≿━━━━༺</TextAnimate></p>
-                    <p className='text-[1.3rem] md:text-[1.5rem]  '> <TextAnimate animation="blurInUp" by="character" once>Where Tranquility Meets Endless Beauty</TextAnimate></p>
-                    <p className='text-[1.3rem] md:text-[1.5rem] ml-2 '> <TextAnimate animation="blurInUp" by="character" once>≿━━━━༺</TextAnimate></p>
+                    <p className='text-[1.1rem] md:text-[1.5rem]  '> <TextAnimate animation="blurInUp" by="character" once>≿━━༺</TextAnimate></p>
+                    <p className='text-[1.1rem] md:text-[1.5rem]  '>  <p><TextAnimate animation="blurInUp" by="character" once>Where Tranquility Meets </TextAnimate></p> <p><TextAnimate animation="blurInUp" by="character" once>Endless Beauty</TextAnimate></p></p>
+                    <p className='text-[1.1rem] md:text-[1.5rem]  '> <TextAnimate animation="blurInUp" by="character" once>≿━━༺</TextAnimate></p>
                   </div>
-                    <div className='flex items-center gap-4 text-[0.8rem] pt-7 md:pt-[4rem]'>
+                    <div className='flex items-center gap-4 text-[0.8rem] pt-7 md:pt-[2rem]'>
                  <BorderMagic buttonDetail='BOOK A STAY' href='/booking'/>
           </div>
                 </div>
