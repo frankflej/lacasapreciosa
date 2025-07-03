@@ -3,7 +3,13 @@ import Link from 'next/link';
 import { roomsData, RoomData } from '@/utils/roomsData';
 import { notFound } from 'next/navigation';
 
-export default function RoomDetail({ params }: { params: { id: string } }) {
+type PageProps = {
+  params: {
+    id: string;
+  };
+};
+
+export default async function RoomDetail({ params }: PageProps) {
   const room: RoomData | undefined = roomsData[params.id];
 
   if (!room) {
