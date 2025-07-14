@@ -20,7 +20,7 @@ export const roomsData: RoomsDataType = {
     id: "1",
     name: "Deluxe King Room",
     type: "deluxe",
-    price: "249",
+    price: "120",
     mainImage: "https://ik.imagekit.io/pqgw24nd3/evrard_60.JPG?updatedAt=1751537863322",
     images: [
       "https://ik.imagekit.io/pqgw24nd3/evrard_60.JPG?updatedAt=1751537863322",
@@ -31,9 +31,6 @@ export const roomsData: RoomsDataType = {
     amenities: [
       "King-size bed",
       "Private bathroom",
-      "Air conditioning",
-      "Flat-screen TV",
-      "Mini fridge",
       "Free Wi-Fi",
       "Room service"
     ],
@@ -44,7 +41,7 @@ export const roomsData: RoomsDataType = {
     id: "2",
     name: "Deluxe King Room",
     type: "deluxe",
-    price: "249",
+    price: "120",
     mainImage: "https://ik.imagekit.io/pqgw24nd3/evrard_45.JPG?updatedAt=1751537832863",
     images: [
       "https://ik.imagekit.io/pqgw24nd3/evrard_45.JPG?updatedAt=1751537832863",
@@ -55,9 +52,6 @@ export const roomsData: RoomsDataType = {
     amenities: [
       "King-size bed",
       "Private bathroom",
-      "Air conditioning",
-      "Flat-screen TV",
-      "Mini fridge",
       "Free Wi-Fi",
       "Room service"
     ],
@@ -68,7 +62,7 @@ export const roomsData: RoomsDataType = {
     id: "3",
     name: "Executive Suite",
     type: "executive",
-    price: "299",
+    price: "150",
     mainImage: "https://ik.imagekit.io/pqgw24nd3/evrard_44.JPG?updatedAt=1751537832908",
     images: [
       "https://ik.imagekit.io/pqgw24nd3/evrard_44.JPG?updatedAt=1751537832908",
@@ -78,10 +72,7 @@ export const roomsData: RoomsDataType = {
     description: "Indulge in luxury in our Executive Suite, featuring premium amenities and spectacular views.",
     amenities: [
       "King-size bed",
-      "Separate living area",
       "Private balcony",
-      "Air conditioning",
-      "55-inch Smart TV",
       "Mini bar",
       "Free Wi-Fi",
       "24/7 Room service",
@@ -94,7 +85,7 @@ export const roomsData: RoomsDataType = {
     id: "4",
     name: "Executive Suite",
     type: "executive",
-    price: "299",
+    price: "150",
     mainImage: "https://ik.imagekit.io/pqgw24nd3/evrard_36.JPG?updatedAt=1751537818426",
     images: [
       "https://ik.imagekit.io/pqgw24nd3/evrard_36.JPG?updatedAt=1751537818426",
@@ -104,10 +95,7 @@ export const roomsData: RoomsDataType = {
     description: "Experience ultimate luxury in our Executive Suite with panoramic views and exclusive amenities.",
     amenities: [
       "King-size bed",
-      "Separate living area",
       "Private balcony",
-      "Air conditioning",
-      "55-inch Smart TV",
       "Mini bar",
       "Free Wi-Fi",
       "24/7 Room service",

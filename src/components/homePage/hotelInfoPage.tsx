@@ -4,8 +4,7 @@ import { FaClock, FaUtensils, FaBed, FaSpa, FaMapMarkerAlt, FaEnvelope } from "r
 const hotelDetails = [
   { icon: <FaClock size={30} />, title: "CHECK IN", detail: "12:00 PM Onwards", sub: "CHECK OUT - 11:59 AM" },
   { icon: <FaUtensils size={30} />, title: "DINING", detail: "2 RESTAURANTS & 1 BAR" },
-  { icon: <FaBed size={30} />, title: "ROOMS & SUITES", detail: "70 ROOMS & SUITES" },
-  { icon: <FaSpa size={30} />, title: "WELLNESS", detail: "WELLNESS CIRCLE OFFERS" },
+  { icon: <FaBed size={30} />, title: "ROOMS & SUITES", detail: "4 ROOMS" },
   { icon: <FaMapMarkerAlt size={30} />, title: "CONTACT", detail: "HAVELI, JODHPUR" },
   { icon: <FaEnvelope size={30} />, title: "MAIL", detail: "HAVELI.JODHPUR@GMAIL.COM" },
 ];
