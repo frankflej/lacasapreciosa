@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import view from "@/assets/view.png";
 import two from "@/assets/2.png";
 import one from "@/assets/1.jpg";
@@ -10,21 +11,25 @@ const highlights = [
     {
       src: highlightsImg1,
       alt: "Historical Palace",
-      description: " Thoughtfully designed rooms with modern amenities."
+      description: "Personalized services to make your stay truly unforgettable.",
+      path: "/experience"
     },
     {
       src: highlightsImg2,
       alt: "Royal Interior",
-      description: "Immerse yourself in the rich culture and heritage of la perla negra."
+      description: " Thoughtfully designed rooms with modern amenities.",
+      path: "/room"
     },
     {
       src: highlightsImg3,
       alt: "Luxury Room",
-      description: "Personalized services to make your stay truly unforgettable."
+      description: "Immerse yourself in the rich culture and heritage of la perla negra.",
+      path: "/gallery"
     },
   ];
 
 export default function Highlights() {
+  const router = useRouter();
   return (
     <section className=" md:px-20 px-8 py-12 font-serif bg-gray-50">
       {/* Section Title */}
@@ -43,14 +48,18 @@ export default function Highlights() {
       <div className="grid md:grid-cols-3 gap-6">
         {highlights.map((item, index) => (
           <div key={index} className="text-center">
-            <Image
+            <div onClick={() => {
+              router.push(item.path);
+            }}> 
+              <Image
               src={item.src}
               alt={item.alt}
               width={350}
               height={250}
               className="rounded-lg w-full h-64 object-cover"
             />
-            <p className="text-md text-gray-800 mt-2">
+            </div>
+            <p className="text-md text-gray-800 mt-2 text-start">
                   {item.description}
             </p>
           </div>

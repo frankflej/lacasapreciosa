@@ -7,6 +7,10 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'La Perla Negra',
+  description: 'Where the tranquility meets endless beauty',
+  icons: {
+    icon: '/assets/logo.png',
+  },
 }
 
 export default function RootLayout({

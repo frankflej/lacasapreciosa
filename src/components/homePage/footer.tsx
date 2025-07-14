@@ -1,4 +1,4 @@
-import { background, negra } from '@/assets';
+import { negra } from '@/assets';
 import Image from 'next/image';
 import BorderMagic from '../button/button';
 import Link from 'next/link';
