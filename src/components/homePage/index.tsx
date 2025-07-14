@@ -18,7 +18,7 @@ export default function Homepage() {
     <Facilities/>
     <LocationDirection/>
     <Reviews/>
-    <PalacesCarousel/>
+    {/* <PalacesCarousel/> */}
     <Footer/>
 </div>
   );
