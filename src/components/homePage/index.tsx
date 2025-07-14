@@ -14,7 +14,7 @@ export default function Homepage() {
     <Landingpage/>
     <Overview/>
     <Highlights/>
-    <HotelInfo/>
+    {/* <HotelInfo/> */}
     <Facilities/>
     <LocationDirection/>
     <Reviews/>

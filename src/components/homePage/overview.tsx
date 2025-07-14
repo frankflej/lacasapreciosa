@@ -41,7 +41,7 @@ export default function Overview() {
         ))}
       </nav>
       {/* Content Section */}
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-16 mt-10 items-center justify-between'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 mt-10 items-center justify-between'>
         {/* Left Side (Text) */}
         <div>
             <div className='flex items-start'>

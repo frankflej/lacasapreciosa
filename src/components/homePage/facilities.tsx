@@ -4,6 +4,7 @@ import view from "@/assets/view.png";
 import BorderMagic from "../button/button";
 import dining from "@/assets/dining.png";
 import { facilitiesImg1, facilitiesImg2, facilitiesImg3 } from "@/assets";
+import { useRouter } from "next/navigation";
 
 const facilities = [
   {
@@ -53,6 +54,7 @@ const facilities = [
 ];
 
 export default function Facilities() {
+  const router = useRouter();
   return (
     <section className=" md:px-20 px-8 py-12 font-serif bg-gray-50">
       {/* Section Title */}
@@ -66,6 +68,10 @@ export default function Facilities() {
           <div
             key={index}
             className="relative  md:h-96 h-64 rounded-lg overflow-hidden group"
+            onClick={() => {
+              router.push(facility.link);
+            }}
+            style={{ cursor: "pointer" }}
           >
             {/* Background Image */}
             <Image

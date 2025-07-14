@@ -32,11 +32,6 @@ export const galleryCategories = [
     name: 'Cave & Entertainment',
     description: 'Experience our unique cave venue - perfect for music, dance, and entertainment'
   },
-  // {
-  //   id: 'dining',
-  //   name: 'Dining Experience',
-  //   description: 'Savor delicious meals in our unique settings'
-  // },
   {
     id: 'interior',
     name: 'Interior & Design',
