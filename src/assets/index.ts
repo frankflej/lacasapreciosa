@@ -7,7 +7,7 @@ export const highlightsImg3 = "https://ik.imagekit.io/pqgw24nd3/IMG_2589.jpg?upd
 
 export const facilitiesImg1 = "https://ik.imagekit.io/pqgw24nd3/evrard_49.JPG?updatedAt=1751537839134"
 export const facilitiesImg2 = "https://ik.imagekit.io/pqgw24nd3/IMG_0483.jpg?updatedAt=1746472144410"
-export const facilitiesImg3 = "https://ik.imagekit.io/pqgw24nd3/IMG_0290.jpg?updatedAt=1748775008216"
+export const facilitiesImg3 = "https://ik.imagekit.io/pqgw24nd3/evrard_37.JPG?updatedAt=1751537827238"
 
 export const locationImg1 = "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20master%20Bathroom%20II.jpg?updatedAt=1742843602673"
 export const locationImg2 = "https://ik.imagekit.io/pqgw24nd3/La%20perla%20negra%20Living%20Room%20main.jpg?updatedAt=1742843584354"
