@@ -6,6 +6,7 @@ import HotelInfo from './hotelInfoPage';
 import Facilities from './facilities';
 import LocationDirection from './LocationDirection';
 import PalacesCarousel from './PalacesCarousel';
+import { WhatWeOffer } from './what-we-offer';
 import Reviews from './reviews';
 import Footer from './footer';
 export default function Homepage() {
@@ -16,6 +17,7 @@ export default function Homepage() {
     <Highlights/>
     {/* <HotelInfo/> */}
     <Facilities/>
+    <WhatWeOffer/>
     <LocationDirection/>
     <Reviews/>
     {/* <PalacesCarousel/> */}
