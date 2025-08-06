@@ -40,6 +40,7 @@ const facilities = [
 export default function Reviews() {
   const containerRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [showAll, setShowAll] = useState(false);
 
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
@@ -60,17 +61,16 @@ export default function Reviews() {
 
         {/* Infinite Carousel */}
         <div className="relative py-12 w-full overflow-x-hidden">
-
-<Marquee  pauseOnHover={true}>
-            {facilities.map((review, idx) => (
-              <div 
-                key={`${review.id}-${idx}`} 
-                className="w-[400px] mx-4 p-6 bg-gradient-to-br from-white to-slate-50 rounded-2xl shadow-xl 
-                         transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+          <Marquee pauseOnHover={true}>
+            {facilities.slice(0, 5).map((review, idx) => (
+              <div
+                key={`${review.id}-${idx}`}
+                className="w-[400px] h-[280px] mx-4 p-6 bg-gradient-to-br from-white to-slate-100 rounded-2xl shadow-sm \
+                         transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col"
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-3">
-                    <div className="h-10 w-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 
+                    <div className="h-10 w-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 \
                                   flex items-center justify-center text-white font-bold">
                       {review.title[0]}
                     </div>
@@ -93,8 +93,8 @@ export default function Reviews() {
                   <div className="absolute top-0 left-0 transform -translate-y-6 text-6xl opacity-10 text-amber-500 font-serif">
                     &ldquo;
                   </div>
-                  <p className="relative z-10 text-gray-600 leading-relaxed">
-                    {review.description}
+                  <p className="relative z-10 text-gray-600 leading-relaxed flex-1 overflow-hidden">
+                    <span className="line-clamp-6">{review.description}</span>
                   </p>
                 </blockquote>
               </div>
@@ -108,12 +108,60 @@ export default function Reviews() {
 
         {/* CTA Button */}
         <div className="mt-5 md:mt-10 text-center">
-          <BorderMagic
-            buttonDetail="Submit A Review"
-            href="/reviews"
-            className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-8 py-4 rounded-xl font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-          />
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-4 px-4">
+            <a
+              href='/reviews'
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-600 text-white font-bold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-all text-base sm:text-lg tracking-wide ring-2 ring-[#c07b50]/30 hover:scale-105 w-full sm:w-auto"
+            >
+              Submit A Review
+            </a>
+            <button
+              onClick={() => setShowAll(true)}
+              className="inline-block bg-white text-amber-600 font-bold px-6 sm:px-8 py-3 rounded-xl shadow-md transition-all text-base sm:text-lg tracking-wide border border-amber-200 hover:bg-amber-50 hover:scale-105 w-full sm:w-auto"
+            >
+              View All Reviews
+            </button>
+          </div>
         </div>
+
+        {showAll && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
+            <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8 relative animate-fadeIn">
+              <button
+                onClick={() => setShowAll(false)}
+                className="absolute top-4 right-4 text-2xl text-gray-400 hover:text-amber-500 font-bold"
+                aria-label="Close"
+              >
+                &times;
+              </button>
+              <h3 className="text-2xl font-bold mb-6 text-center text-amber-600">All Guest Reviews</h3>
+              <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
+                {facilities.map((review, idx) => (
+                  <div
+                    key={`${review.id}-modal-${idx}`}
+                    className="bg-gradient-to-br from-white to-slate-50 rounded-xl shadow p-4"
+                  >
+                    <div className="flex items-center mb-2">
+                      <div className="h-8 w-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white font-bold mr-2">
+                        {review.title[0]}
+                      </div>
+                      <span className="font-semibold text-gray-900">{review.title}</span>
+                      <div className="flex ml-auto space-x-1">
+                        {[...Array(review.rating)].map((_, i) => (
+                          <svg key={i} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-gray-600 text-sm">{review.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

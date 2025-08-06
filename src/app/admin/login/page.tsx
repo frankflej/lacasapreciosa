@@ -1,171 +1,143 @@
 "use client"
 
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import { useForm } from 'react-hook-form'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Alert, AlertDescription } from '@/components/ui/alert'
-import { Eye, EyeOff, Lock, Mail } from 'lucide-react'
+import { useState } from "react";
 
-interface LoginForm {
-  email: string
-  password: string
-}
+export default function AdminAuthPage() {
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [form, setForm] = useState({ email: "", password: "", confirm: "" });
 
-export default function AdminLoginPage() {
-  const router = useRouter()
-  const [isLoading, setIsLoading] = useState(false)
-  const [showPassword, setShowPassword] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-  
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  } = useForm<LoginForm>()
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-  useEffect(() => {
-    // Check if user is already authenticated
-    const token = localStorage.getItem('admin_token')
-    if (token) {
-      router.push('/admin')
-    }
-  }, [router])
-
-  const onSubmit = async (data: LoginForm) => {
-    setIsLoading(true)
-    setError(null)
-
-    try {
-      // Here you would make an API call to your backend to authenticate
-      // For demo purposes, we'll use hardcoded credentials
-      if (data.email === 'admin@lacasapreciosa.com' && data.password === 'admin123') {
-        // Simulate API call delay
-        await new Promise(resolve => setTimeout(resolve, 1000))
-        
-        // Store token (in real app, this would come from your backend)
-        localStorage.setItem('admin_token', 'demo_token_123')
-        
-        router.push('/admin')
-      } else {
-        setError('Invalid email or password')
-      }
-    } catch (err) {
-      setError('An error occurred. Please try again.')
-    } finally {
-      setIsLoading(false)
-    }
-  }
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Log form data
+    console.log(isSignUp ? "Sign Up Data:" : "Sign In Data:", form);
+    // Reset form (optional)
+    setForm({ email: "", password: "", confirm: "" });
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="space-y-1">
-          <div className="flex items-center justify-center mb-4">
-            <div className="bg-blue-600 p-3 rounded-full">
-              <Lock className="h-6 w-6 text-white" />
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 via-amber-50 to-amber-100 relative">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-amber-400/20 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-300/15 rounded-full blur-3xl -z-10" />
+
+      <div className="w-full max-w-md bg-white/95 rounded-2xl shadow-2xl p-8 flex flex-col items-center">
+        {/* Logo/Branding */}
+        <div className="bg-gradient-to-br from-amber-500 to-amber-600 rounded-full p-4 mb-6 shadow-lg">
+          <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path d="M12 15v2m0-6v2m0 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
+        
+        {/* Header Section */}
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">La Perla Negra</h1>
+          <div className="flex items-center justify-center mb-3">
+            <div className="h-[2px] w-8 bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
+            <span className="mx-3 text-sm font-semibold tracking-wider text-amber-600 uppercase">
+              Admin Panel
+            </span>
+            <div className="h-[2px] w-8 bg-gradient-to-l from-transparent via-amber-500 to-transparent" />
+          </div>
+          <p className="text-gray-600">{isSignUp ? "Create your admin account" : "Sign in to your account"}</p>
+        </div>
+
+        <form className="w-full space-y-5" onSubmit={handleSubmit}>
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+            <div className="relative">
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition outline-none bg-white"
+                placeholder="admin@laperlanegra.com"
+              />
+              <span className="absolute left-3 top-3 text-gray-400">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path d="M16 12H8m8 0a4 4 0 1 0-8 0 4 4 0 0 0 8 0Z" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold text-center">
-            La Casa Preciosa
-          </CardTitle>
-          <CardDescription className="text-center">
-            Admin Panel - Sign in to your account
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            {error && (
-              <Alert variant="destructive">
-                <AlertDescription>{error}</AlertDescription>
-              </Alert>
-            )}
-            
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <div className="relative">
-                <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="admin@lacasapreciosa.com"
-                  className="pl-10"
-                  {...register('email', {
-                    required: 'Email is required',
-                    pattern: {
-                      value: /^\S+@\S+$/i,
-                      message: 'Invalid email address'
-                    }
-                  })}
-                />
-              </div>
-              {errors.email && (
-                <p className="text-sm text-red-600">{errors.email.message}</p>
-              )}
+          
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-2">Password</label>
+            <div className="relative">
+              <input
+                type="password"
+                name="password"
+                value={form.password}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition outline-none bg-white"
+                placeholder="Enter your password"
+              />
+              <span className="absolute left-3 top-3 text-gray-400">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path d="M12 15v2m0-6v2m0 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
             </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+          </div>
+          
+          {isSignUp && (
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Confirm Password</label>
               <div className="relative">
-                <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                <Input
-                  id="password"
-                  type={showPassword ? 'text' : 'password'}
-                  placeholder="Enter your password"
-                  className="pl-10 pr-10"
-                  {...register('password', {
-                    required: 'Password is required',
-                    minLength: {
-                      value: 6,
-                      message: 'Password must be at least 6 characters'
-                    }
-                  })}
+                <input
+                  type="password"
+                  name="confirm"
+                  value={form.confirm}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition outline-none bg-white"
+                  placeholder="Confirm your password"
                 />
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="sm"
-                  className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
-                  {showPassword ? (
-                    <EyeOff className="h-4 w-4 text-gray-400" />
-                  ) : (
-                    <Eye className="h-4 w-4 text-gray-400" />
-                  )}
-                </Button>
+                <span className="absolute left-3 top-3 text-gray-400">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path d="M12 15v2m0-6v2m0 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
               </div>
-              {errors.password && (
-                <p className="text-sm text-red-600">{errors.password.message}</p>
-              )}
             </div>
+          )}
+          
+          <button
+            type="submit"
+            className="w-full py-3 mt-6 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold rounded-lg shadow-lg hover:from-amber-600 hover:to-amber-700 transition-all duration-200 transform hover:-translate-y-0.5 hover:scale-105"
+          >
+            {isSignUp ? "Create Account" : "Sign In"}
+          </button>
+        </form>
 
-            <Button
-              type="submit"
-              className="w-full"
-              disabled={isLoading}
+        <div className="w-full flex flex-col items-center mt-8">
+          <span className="text-gray-600 text-sm">
+            {isSignUp ? "Already have an account?" : "Don't have an account?"}
+            <button
+              className="ml-1 text-amber-600 font-semibold hover:text-amber-700 hover:underline"
+              onClick={() => setIsSignUp((v) => !v)}
+              type="button"
             >
-              {isLoading ? (
-                <>
-                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
-                  Signing in...
-                </>
-              ) : (
-                'Sign In'
-              )}
-            </Button>
-          </form>
-
-          <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600">
-              Demo credentials: admin@lacasapreciosa.com / admin123
+              {isSignUp ? "Sign In" : "Sign Up"}
+            </button>
+          </span>
+        </div>
+        
+        {/* {!isSignUp && (
+          <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+            <p className="text-xs text-amber-800 text-center">
+              <strong>Demo credentials:</strong><br />
+              <span className="font-mono">admin@laperlanegra.com / admin123</span>
             </p>
           </div>
-        </CardContent>
-      </Card>
+        )} */}
+      </div>
     </div>
-  )
+  );
 } 

@@ -76,13 +76,23 @@ export default function Landingpage() {
                   />
                 </div>
                 <div className='flex flex-col items-center gap-2'>
-                  <p className='text-[4rem] md:text-[7rem] font-bold kalnia-font '>
-                    <TextAnimate animation="blurInUp" by="character">La Perla Negra</TextAnimate></p>
+                  <p className='text-[4rem] md:text-[7rem] font-bold kalnia-font'>
+                    <span className='whitespace-nowrap'>
+                      <TextAnimate animation="blurInUp" by="character">La Perla Negra</TextAnimate>
+                    </span>
+                  </p>
                   <div className='flex items-center gap-2'>
                      
-                    <p className='text-[1.1rem] md:text-[1.5rem]  '> <TextAnimate animation="blurInUp" by="character" once>≿━━༺</TextAnimate></p>
-                    <p className='text-[1.1rem] md:text-[1.5rem]  '>  <p><TextAnimate animation="blurInUp" by="character" once>Where Tranquility Meets </TextAnimate></p> <p><TextAnimate animation="blurInUp" by="character" once>Endless Beauty</TextAnimate></p></p>
-                    <p className='text-[1.1rem] md:text-[1.5rem]  '> <TextAnimate animation="blurInUp" by="character" once>≿━━༺</TextAnimate></p>
+                    <p className='text-[1.1rem] md:text-[1.5rem]'> <TextAnimate animation="blurInUp" by="character" once>≿━━༺</TextAnimate></p>
+                    <div className='text-[1.1rem] md:text-[1.5rem] flex flex-col'>
+                      <span className='whitespace-nowrap'>
+                        <TextAnimate animation="blurInUp" by="character" once>Where Tranquility Meets</TextAnimate>
+                      </span>
+                      <span className='whitespace-nowrap'>
+                        <TextAnimate animation="blurInUp" by="character" once>Endless Beauty</TextAnimate>
+                      </span>
+                    </div>
+                    <p className='text-[1.1rem] md:text-[1.5rem]'> <TextAnimate animation="blurInUp" by="character" once>≿━━༺</TextAnimate></p>
                   </div>
                     <div className='flex items-center gap-4 text-[0.8rem] pt-7 md:pt-[2rem]'>
                  <BorderMagic buttonDetail='BOOK A STAY' href='/booking'/>
