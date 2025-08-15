@@ -1,6 +1,11 @@
-query fetchingTesting {
-  testing {
-    id
-    name
+query getFeedbacks {
+  Reviews(distinct_on: CreatedAt) {
+    Email
+    CreatedAt
+    Feedback
+    IsApproved
+    Name
+    ReviewsId
+    Rating
   }
 }
