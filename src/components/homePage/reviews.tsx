@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import BorderMagic from "../button/button";
 import { useRef, useState } from 'react';
 import Marquee from "react-fast-marquee";
+import { useFetchingFeedbacks } from "@/hooks/useFetchingFeedbacks";
+import Skeleton from 'react-loading-skeleton'
 
 const facilities = [
   {
@@ -38,6 +40,8 @@ const facilities = [
 ];
 
 export default function Reviews() {
+  const { data, isFetching, error } = useFetchingFeedbacks();
+  console.log(data);
   const containerRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const [showAll, setShowAll] = useState(false);
@@ -62,9 +66,49 @@ export default function Reviews() {
         {/* Infinite Carousel */}
         <div className="relative py-12 w-full overflow-x-hidden">
           <Marquee pauseOnHover={true}>
-            {facilities.slice(0, 5).map((review, idx) => (
+            {isFetching ? (
+              // Custom skeleton that matches the card design
+              Array.from({ length: 5 }).map((_, idx) => (
+                <div
+                  key={`skeleton-${idx}`}
+                  className="w-[400px] h-[280px] mx-4 p-6 bg-gradient-to-br from-white to-slate-100 rounded-2xl shadow-sm flex flex-col animate-pulse"
+                >
+                  {/* Header skeleton */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      {/* Avatar skeleton */}
+                      <div className="h-10 w-10 rounded-full bg-gray-300 animate-pulse"></div>
+                      {/* Name skeleton */}
+                      <div className="h-6 w-20 bg-gray-300 rounded animate-pulse"></div>
+                    </div>
+                    {/* Stars skeleton */}
+                    <div className="flex space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <div key={i} className="w-5 h-5 bg-gray-300 rounded animate-pulse"></div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Quote mark skeleton */}
+                  <div className="relative">
+                    <div className="absolute top-0 left-0 transform -translate-y-6 text-6xl opacity-10 text-gray-300 font-serif">
+                      &ldquo;
+                    </div>
+                    
+                    {/* Text lines skeleton */}
+                    <div className="relative z-10 space-y-2">
+                      <div className="h-4 bg-gray-300 rounded animate-pulse"></div>
+                      <div className="h-4 bg-gray-300 rounded animate-pulse"></div>
+                      <div className="h-4 bg-gray-300 rounded animate-pulse"></div>
+                      <div className="h-4 bg-gray-300 rounded animate-pulse w-3/4"></div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            ) : (
+              data?.Reviews?.slice(0, 5).map((review, idx) => (
               <div
-                key={`${review.id}-${idx}`}
+                key={`${review.ReviewsId}-${idx}`}
                 className="w-[400px] h-[280px] mx-4 p-6 bg-gradient-to-br from-white to-slate-100 rounded-2xl shadow-sm \
                          transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col"
               >
@@ -72,12 +116,12 @@ export default function Reviews() {
                   <div className="flex items-center space-x-3">
                     <div className="h-10 w-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 \
                                   flex items-center justify-center text-white font-bold">
-                      {review.title[0]}
+                      {review.Name[0]}
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900">{review.title}</h3>
+                    <h3 className="text-lg font-semibold text-gray-900">{review.Name}</h3>
                   </div>
                   <div className="flex space-x-1">
-                    {[...Array(review.rating)].map((_, i) => (
+                    {[...Array(review.Rating)].map((_, i) => (
                       <svg
                         key={i}
                         className="w-5 h-5 text-amber-400"
@@ -94,11 +138,11 @@ export default function Reviews() {
                     &ldquo;
                   </div>
                   <p className="relative z-10 text-gray-600 leading-relaxed flex-1 overflow-hidden">
-                    <span className="line-clamp-6">{review.description}</span>
+                    <span className="line-clamp-6">{review.Feedback}</span>
                   </p>
                 </blockquote>
               </div>
-            ))}
+            )))}
           </Marquee>
 
           {/* Gradient Overlays */}
