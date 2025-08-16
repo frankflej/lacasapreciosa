@@ -1,0 +1,10 @@
+query getForm {
+  ContactForm(order_by: { CreatedAt: desc }) {
+    Email
+    CreatedAt
+    Message
+    FName
+    Email
+    FormId
+  }
+}

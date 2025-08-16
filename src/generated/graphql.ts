@@ -1962,10 +1962,15 @@ export type FetchUserByEmailQueryVariables = Exact<{
 
 export type FetchUserByEmailQuery = { __typename?: 'query_root', User: Array<{ __typename?: 'User', Email: string, Password: string, FirstName: string, LastName: string }> };
 
+export type GetFormQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFormQuery = { __typename?: 'query_root', ContactForm: Array<{ __typename?: 'ContactForm', Email?: string | null, CreatedAt?: any | null, Message: string, FName?: string | null, FormId: any }> };
+
 export type GetFeedbacksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFeedbacksQuery = { __typename?: 'query_root', Reviews: Array<{ __typename?: 'Reviews', Email: string, CreatedAt?: any | null, Feedback: string, IsApproved?: boolean | null, Name: string, ReviewsId: any, Rating: any }> };
+export type GetFeedbacksQuery = { __typename?: 'query_root', Reviews: Array<{ __typename?: 'Reviews', Email: string, CreatedAt?: any | null, Feedback: string, IsApproved?: boolean | null, Name: string, ReviewsId: any, Rating: any, WouldRecommand: string }> };
 
 export type SaveFeedbackMutationVariables = Exact<{
   input: Reviews_Insert_Input;
@@ -2103,6 +2108,100 @@ useSuspenseInfiniteFetchUserByEmailQuery.getKey = (variables: FetchUserByEmailQu
 
 useFetchUserByEmailQuery.fetcher = (variables: FetchUserByEmailQueryVariables, options?: RequestInit['headers']) => fetcher<FetchUserByEmailQuery, FetchUserByEmailQueryVariables>(FetchUserByEmailDocument, variables, options);
 
+export const GetFormDocument = `
+    query getForm {
+  ContactForm(order_by: {CreatedAt: desc}) {
+    Email
+    CreatedAt
+    Message
+    FName
+    Email
+    FormId
+  }
+}
+    `;
+
+export const useGetFormQuery = <
+      TData = GetFormQuery,
+      TError = unknown
+    >(
+      variables?: GetFormQueryVariables,
+      options?: Omit<UseQueryOptions<GetFormQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<GetFormQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useQuery<GetFormQuery, TError, TData>(
+      {
+    queryKey: variables === undefined ? ['getForm'] : ['getForm', variables],
+    queryFn: fetcher<GetFormQuery, GetFormQueryVariables>(GetFormDocument, variables),
+    ...options
+  }
+    )};
+
+useGetFormQuery.getKey = (variables?: GetFormQueryVariables) => variables === undefined ? ['getForm'] : ['getForm', variables];
+
+export const useSuspenseGetFormQuery = <
+      TData = GetFormQuery,
+      TError = unknown
+    >(
+      variables?: GetFormQueryVariables,
+      options?: Omit<UseSuspenseQueryOptions<GetFormQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseQueryOptions<GetFormQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useSuspenseQuery<GetFormQuery, TError, TData>(
+      {
+    queryKey: variables === undefined ? ['getFormSuspense'] : ['getFormSuspense', variables],
+    queryFn: fetcher<GetFormQuery, GetFormQueryVariables>(GetFormDocument, variables),
+    ...options
+  }
+    )};
+
+useSuspenseGetFormQuery.getKey = (variables?: GetFormQueryVariables) => variables === undefined ? ['getFormSuspense'] : ['getFormSuspense', variables];
+
+export const useInfiniteGetFormQuery = <
+      TData = InfiniteData<GetFormQuery>,
+      TError = unknown
+    >(
+      variables: GetFormQueryVariables,
+      options: Omit<UseInfiniteQueryOptions<GetFormQuery, TError, TData>, 'queryKey'> & { queryKey?: UseInfiniteQueryOptions<GetFormQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useInfiniteQuery<GetFormQuery, TError, TData>(
+      (() => {
+    const { queryKey: optionsQueryKey, ...restOptions } = options;
+    return {
+      queryKey: optionsQueryKey ?? variables === undefined ? ['getForm.infinite'] : ['getForm.infinite', variables],
+      queryFn: (metaData) => fetcher<GetFormQuery, GetFormQueryVariables>(GetFormDocument, {...variables, ...(metaData.pageParam ?? {})})(),
+      ...restOptions
+    }
+  })()
+    )};
+
+useInfiniteGetFormQuery.getKey = (variables?: GetFormQueryVariables) => variables === undefined ? ['getForm.infinite'] : ['getForm.infinite', variables];
+
+export const useSuspenseInfiniteGetFormQuery = <
+      TData = InfiniteData<GetFormQuery>,
+      TError = unknown
+    >(
+      variables: GetFormQueryVariables,
+      options: Omit<UseSuspenseInfiniteQueryOptions<GetFormQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseInfiniteQueryOptions<GetFormQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useSuspenseInfiniteQuery<GetFormQuery, TError, TData>(
+      (() => {
+    const { queryKey: optionsQueryKey, ...restOptions } = options;
+    return {
+      queryKey: optionsQueryKey ?? variables === undefined ? ['getForm.infiniteSuspense'] : ['getForm.infiniteSuspense', variables],
+      queryFn: (metaData) => fetcher<GetFormQuery, GetFormQueryVariables>(GetFormDocument, {...variables, ...(metaData.pageParam ?? {})})(),
+      ...restOptions
+    }
+  })()
+    )};
+
+useSuspenseInfiniteGetFormQuery.getKey = (variables?: GetFormQueryVariables) => variables === undefined ? ['getForm.infiniteSuspense'] : ['getForm.infiniteSuspense', variables];
+
+
+useGetFormQuery.fetcher = (variables?: GetFormQueryVariables, options?: RequestInit['headers']) => fetcher<GetFormQuery, GetFormQueryVariables>(GetFormDocument, variables, options);
+
 export const GetFeedbacksDocument = `
     query getFeedbacks {
   Reviews(order_by: {CreatedAt: desc}) {
@@ -2113,6 +2212,7 @@ export const GetFeedbacksDocument = `
     Name
     ReviewsId
     Rating
+    WouldRecommand
   }
 }
     `;

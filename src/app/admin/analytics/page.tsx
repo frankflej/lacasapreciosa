@@ -25,13 +25,12 @@ import {
 
 export default function AnalyticsPage() {
   return (
-    <AdminLayout>
       <div className="space-y-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="text-2xl font-bold text-gray-900">Analytics Dashboard</h1>
-            <p className="text-gray-600">Track performance metrics and business insights for La Casa Preciosa.</p>
+            <p className="text-gray-600">Track performance metrics and business insights for La Perla Negra.</p>
           </div>
           <div className="flex items-center space-x-2 mt-4 sm:mt-0">
             <Select defaultValue="30">
@@ -294,6 +293,5 @@ export default function AnalyticsPage() {
           </CardContent>
         </Card>
       </div>
-    </AdminLayout>
   )
 } 

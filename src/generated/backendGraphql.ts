@@ -1954,10 +1954,15 @@ export type FetchUserByEmailQueryVariables = Exact<{
 
 export type FetchUserByEmailQuery = { __typename?: 'query_root', User: Array<{ __typename?: 'User', Email: string, Password: string, FirstName: string, LastName: string }> };
 
+export type GetFormQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFormQuery = { __typename?: 'query_root', ContactForm: Array<{ __typename?: 'ContactForm', Email?: string | null, CreatedAt?: any | null, Message: string, FName?: string | null, FormId: any }> };
+
 export type GetFeedbacksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFeedbacksQuery = { __typename?: 'query_root', Reviews: Array<{ __typename?: 'Reviews', Email: string, CreatedAt?: any | null, Feedback: string, IsApproved?: boolean | null, Name: string, ReviewsId: any, Rating: any }> };
+export type GetFeedbacksQuery = { __typename?: 'query_root', Reviews: Array<{ __typename?: 'Reviews', Email: string, CreatedAt?: any | null, Feedback: string, IsApproved?: boolean | null, Name: string, ReviewsId: any, Rating: any, WouldRecommand: string }> };
 
 export type SaveFeedbackMutationVariables = Exact<{
   input: Reviews_Insert_Input;
@@ -1995,6 +2000,18 @@ export const FetchUserByEmailDocument = gql`
   }
 }
     `;
+export const GetFormDocument = gql`
+    query getForm {
+  ContactForm(order_by: {CreatedAt: desc}) {
+    Email
+    CreatedAt
+    Message
+    FName
+    Email
+    FormId
+  }
+}
+    `;
 export const GetFeedbacksDocument = gql`
     query getFeedbacks {
   Reviews(order_by: {CreatedAt: desc}) {
@@ -2005,6 +2022,7 @@ export const GetFeedbacksDocument = gql`
     Name
     ReviewsId
     Rating
+    WouldRecommand
   }
 }
     `;
@@ -2042,6 +2060,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     fetchUserByEmail(variables: FetchUserByEmailQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<FetchUserByEmailQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<FetchUserByEmailQuery>({ document: FetchUserByEmailDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'fetchUserByEmail', 'query', variables);
+    },
+    getForm(variables?: GetFormQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetFormQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetFormQuery>({ document: GetFormDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'getForm', 'query', variables);
     },
     getFeedbacks(variables?: GetFeedbacksQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetFeedbacksQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetFeedbacksQuery>({ document: GetFeedbacksDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'getFeedbacks', 'query', variables);
