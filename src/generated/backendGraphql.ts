@@ -1646,16 +1646,35 @@ export type GetFeedbacksQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetFeedbacksQuery = { __typename?: 'query_root', Reviews: Array<{ __typename?: 'Reviews', Email: string, CreatedAt?: any | null, Feedback: string, IsApproved?: boolean | null, Name: string, ReviewsId: any, Rating: any }> };
 
+export type SaveFeedbackMutationVariables = Exact<{
+  input: Reviews_Insert_Input;
+}>;
+
+
+export type SaveFeedbackMutation = { __typename?: 'mutation_root', insert_Reviews_one?: { __typename?: 'Reviews', Email: string, Feedback: string, IsApproved?: boolean | null, Name: string, WouldRecommand: string, Rating: any } | null };
+
 
 export const GetFeedbacksDocument = gql`
     query getFeedbacks {
-  Reviews(distinct_on: CreatedAt) {
+  Reviews(order_by: {CreatedAt: desc}) {
     Email
     CreatedAt
     Feedback
     IsApproved
     Name
     ReviewsId
+    Rating
+  }
+}
+    `;
+export const SaveFeedbackDocument = gql`
+    mutation saveFeedback($input: Reviews_insert_input!) {
+  insert_Reviews_one(object: $input) {
+    Email
+    Feedback
+    IsApproved
+    Name
+    WouldRecommand
     Rating
   }
 }
@@ -1670,6 +1689,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
   return {
     getFeedbacks(variables?: GetFeedbacksQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetFeedbacksQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetFeedbacksQuery>({ document: GetFeedbacksDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'getFeedbacks', 'query', variables);
+    },
+    saveFeedback(variables: SaveFeedbackMutationVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<SaveFeedbackMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<SaveFeedbackMutation>({ document: SaveFeedbackDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'saveFeedback', 'mutation', variables);
     }
   };
 }
