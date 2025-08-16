@@ -117,11 +117,11 @@ export default function AdminAuthPage() {
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition outline-none bg-white"
                       placeholder="First Name"
                     />
-                    <span className="absolute left-3 top-3 text-gray-400">
+                    {/* <span className="absolute left-3 top-3 text-gray-400">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                         <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
-                    </span>
+                    </span> */}
                   </div>
                 </div>
                 <div>
@@ -136,11 +136,11 @@ export default function AdminAuthPage() {
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition outline-none bg-white"
                       placeholder="Last Name"
                     />
-                    <span className="absolute left-3 top-3 text-gray-400">
+                    {/* <span className="absolute left-3 top-3 text-gray-400">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                         <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
-                    </span>
+                    </span> */}
                   </div>
                 </div>
               </div>
@@ -159,11 +159,11 @@ export default function AdminAuthPage() {
                 className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition outline-none bg-white"
                 placeholder="admin@laperlanegra.com"
               />
-              <span className="absolute left-3 top-3 text-gray-400">
+              {/* <span className="absolute left-3 top-3 text-gray-400">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path d="M16 12H8m8 0a4 4 0 1 0-8 0 4 4 0 0 0 8 0Z" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </span>
+              </span> */}
             </div>
           </div>
           
@@ -179,11 +179,11 @@ export default function AdminAuthPage() {
                 className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition outline-none bg-white"
                 placeholder="Enter your password"
               />
-              <span className="absolute left-3 top-3 text-gray-400">
+              {/* <span className="absolute left-3 top-3 text-gray-400">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path d="M12 15v2m0-6v2m0 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </span>
+              </span> */}
             </div>
             {passwordError && (
               <p className="text-red-500 text-xs mt-1">{passwordError}</p>
@@ -209,11 +209,11 @@ export default function AdminAuthPage() {
                   }`}
                   placeholder="Confirm your password"
                 />
-                <span className="absolute left-3 top-3 text-gray-400">
+                {/* <span className="absolute left-3 top-3 text-gray-400">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                     <path d="M12 15v2m0-6v2m0 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                </span>
+                </span> */}
               </div>
               {/* Password Match Indicator */}
               {form.Confirm !== "" && (
