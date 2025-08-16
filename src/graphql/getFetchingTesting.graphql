@@ -1,5 +1,5 @@
 query getFeedbacks {
-  Reviews(distinct_on: CreatedAt) {
+  Reviews(order_by: { CreatedAt: desc }) {
     Email
     CreatedAt
     Feedback

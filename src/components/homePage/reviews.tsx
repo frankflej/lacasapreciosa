@@ -171,35 +171,35 @@ export default function Reviews() {
 
         {showAll && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
-            <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8 relative animate-fadeIn">
+            <div className="bg-white rounded-2xl shadow-2xl max-w-6xl w-full max-h-[85vh] overflow-y-auto p-8 relative animate-fadeIn">
               <button
                 onClick={() => setShowAll(false)}
-                className="absolute top-4 right-4 text-2xl text-gray-400 hover:text-amber-500 font-bold"
+                className="absolute top-4 right-4 text-5xl text-gray-400 hover:text-amber-500 font-bold"
                 aria-label="Close"
               >
                 &times;
               </button>
               <h3 className="text-2xl font-bold mb-6 text-center text-amber-600">All Guest Reviews</h3>
               <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
-                {facilities.map((review, idx) => (
+                {data?.Reviews?.map((review, idx) => (
                   <div
-                    key={`${review.id}-modal-${idx}`}
+                    key={`${review.ReviewsId}-modal-${idx}`}
                     className="bg-gradient-to-br from-white to-slate-50 rounded-xl shadow p-4"
                   >
                     <div className="flex items-center mb-2">
                       <div className="h-8 w-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white font-bold mr-2">
-                        {review.title[0]}
+                        {review.Name[0]}
                       </div>
-                      <span className="font-semibold text-gray-900">{review.title}</span>
+                      <span className="font-semibold text-gray-900">{review.Name}</span>
                       <div className="flex ml-auto space-x-1">
-                        {[...Array(review.rating)].map((_, i) => (
+                        {[...Array(review.Rating)].map((_, i) => (
                           <svg key={i} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
                         ))}
                       </div>
                     </div>
-                    <p className="text-gray-600 text-sm">{review.description}</p>
+                    <p className="text-gray-600 text-sm">{review.Feedback}</p>
                   </div>
                 ))}
               </div>

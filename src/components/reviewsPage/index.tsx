@@ -3,9 +3,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { negra } from '@/assets';
-import { FaStar, FaSpinner, FaUser, FaHeart, FaThumbsUp, FaCommentDots } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
-
+import { FaStar, FaSpinner} from 'react-icons/fa';
+import { useSaveFeedbacks } from '@/hooks/useSaveFeedbacks';
 export default function Reviews() {
   const [formData, setFormData] = useState({
     name: '',
@@ -14,10 +13,8 @@ export default function Reviews() {
     review: '',
     wouldRecommend: ''
   });
-
-  const [isLoading, setIsLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
+  
+  const { mutate, isLoading: isSaving, isSuccess } = useSaveFeedbacks(setFormData);
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -35,50 +32,15 @@ export default function Reviews() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-    setSubmitStatus('idle');
-
-    try {
-    //   const result = await emailjs.send(
-    //     process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_your_service_id',
-    //     process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_your_template_id',
-    //     {
-    //       from_name: formData.name,
-    //       from_email: formData.email,
-    //       subject: `New Review: ${formData.title}`,
-    //       experience_type: formData.experience,
-    //       rating: `${formData.rating}/5 stars`,
-    //       review_title: formData.title,
-    //       review_message: formData.review,
-    //       visit_date: formData.visitDate || 'Not specified',
-    //       would_recommend: formData.wouldRecommend,
-    //       to_email: 'frankflej@gmail.com',
-    //       reply_to: formData.email,
-    //       message_type: 'Customer Review'
-    //     },
-    //     process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'your_public_key'
-    //   );
-    console.log(formData);
-
-    //   if (result.status === 200) {
-    //     setSubmitStatus('success');
-    //     setFormData({
-    //       name: '',
-    //       email: '',
-    //       experience: '',
-    //       rating: 0,
-    //       title: '',
-    //       review: '',
-    //       visitDate: '',
-    //       wouldRecommend: ''
-    //     });
-    //   }
-    } catch (error) {
-      console.error('Review submission error:', error);
-      setSubmitStatus('error');
-    } finally {
-      setIsLoading(false);
-    }
+    mutate({
+      input: {
+        Name: formData.name,
+        Email: formData.email,
+        Feedback: formData.review,
+        Rating: formData.rating,
+        WouldRecommand: formData.wouldRecommend,
+      }
+    })
   };
 
   return (
@@ -132,20 +94,6 @@ export default function Reviews() {
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Write Your Review</h2>
           
-          {/* Status Messages */}
-          {submitStatus === 'success' && (
-            <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-              <p className="font-medium">Thank you for your review!</p>
-              <p className="text-sm">Your feedback has been submitted successfully.</p>
-            </div>
-          )}
-          
-          {submitStatus === 'error' && (
-            <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
-              <p className="font-medium">Failed to submit review.</p>
-              <p className="text-sm">Please try again or contact us directly.</p>
-            </div>
-          )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Personal Information */}
@@ -161,7 +109,7 @@ export default function Reviews() {
                   required
                   value={formData.name}
                   onChange={handleInputChange}
-                  disabled={isLoading}
+                  disabled={isSaving}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-transparent outline-none transition-all duration-300 disabled:bg-gray-100 disabled:cursor-not-allowed text-gray-900 placeholder-gray-500"
                   placeholder="Enter your name"
                 />
@@ -177,7 +125,7 @@ export default function Reviews() {
                   required
                   value={formData.email}
                   onChange={handleInputChange}
-                  disabled={isLoading}
+                  disabled={isSaving}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-transparent outline-none transition-all duration-300 disabled:bg-gray-100 disabled:cursor-not-allowed text-gray-900 placeholder-gray-500"
                   placeholder="Enter your email"
                 />
@@ -196,7 +144,7 @@ export default function Reviews() {
                 rows={6}
                 value={formData.review}
                 onChange={handleInputChange}
-                disabled={isLoading}
+                disabled={isSaving}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-transparent outline-none transition-all duration-300 resize-none disabled:bg-gray-100 disabled:cursor-not-allowed text-gray-900 placeholder-gray-500"
                 placeholder="Share your experience at La Perla Negra..."
               />
@@ -213,7 +161,7 @@ export default function Reviews() {
                     key={star}
                     type="button"
                     onClick={() => handleRatingClick(star)}
-                    disabled={isLoading}
+                    disabled={isSaving}
                     className={`text-2xl transition-colors duration-200 ${
                       star <= formData.rating 
                         ? 'text-yellow-400 hover:text-yellow-500' 
@@ -240,7 +188,7 @@ export default function Reviews() {
                 required
                 value={formData.wouldRecommend}
                 onChange={handleInputChange}
-                disabled={isLoading}
+                disabled={isSaving}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-transparent outline-none transition-all duration-300 disabled:bg-gray-100 disabled:cursor-not-allowed text-gray-900"
               >
                 <option value="" className="text-gray-500">Select an option</option>
@@ -254,10 +202,10 @@ export default function Reviews() {
 
             <button
               type="submit"
-              disabled={isLoading || formData.rating === 0}
+              disabled={isSaving || formData.rating === 0}
               className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
             >
-              {isLoading ? (
+              {isSaving ? (
                 <>
                   <FaSpinner className="animate-spin mr-2" />
                   Submitting Review...

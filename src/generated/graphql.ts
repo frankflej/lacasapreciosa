@@ -1,4 +1,4 @@
-import { useQuery, useSuspenseQuery, useInfiniteQuery, useSuspenseInfiniteQuery, UseQueryOptions, UseSuspenseQueryOptions, UseInfiniteQueryOptions, InfiniteData, UseSuspenseInfiniteQueryOptions } from '@tanstack/react-query';
+import { useQuery, useSuspenseQuery, useInfiniteQuery, useSuspenseInfiniteQuery, useMutation, UseQueryOptions, UseSuspenseQueryOptions, UseInfiniteQueryOptions, InfiniteData, UseSuspenseInfiniteQueryOptions, UseMutationOptions } from '@tanstack/react-query';
 import { fetcher } from '../helpers/fetcher';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
@@ -1654,11 +1654,18 @@ export type GetFeedbacksQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetFeedbacksQuery = { __typename?: 'query_root', Reviews: Array<{ __typename?: 'Reviews', Email: string, CreatedAt?: any | null, Feedback: string, IsApproved?: boolean | null, Name: string, ReviewsId: any, Rating: any }> };
 
+export type SaveFeedbackMutationVariables = Exact<{
+  input: Reviews_Insert_Input;
+}>;
+
+
+export type SaveFeedbackMutation = { __typename?: 'mutation_root', insert_Reviews_one?: { __typename?: 'Reviews', Email: string, Feedback: string, IsApproved?: boolean | null, Name: string, WouldRecommand: string, Rating: any } | null };
+
 
 
 export const GetFeedbacksDocument = `
     query getFeedbacks {
-  Reviews(distinct_on: CreatedAt) {
+  Reviews(order_by: {CreatedAt: desc}) {
     Email
     CreatedAt
     Feedback
@@ -1750,3 +1757,32 @@ useSuspenseInfiniteGetFeedbacksQuery.getKey = (variables?: GetFeedbacksQueryVari
 
 
 useGetFeedbacksQuery.fetcher = (variables?: GetFeedbacksQueryVariables, options?: RequestInit['headers']) => fetcher<GetFeedbacksQuery, GetFeedbacksQueryVariables>(GetFeedbacksDocument, variables, options);
+
+export const SaveFeedbackDocument = `
+    mutation saveFeedback($input: Reviews_insert_input!) {
+  insert_Reviews_one(object: $input) {
+    Email
+    Feedback
+    IsApproved
+    Name
+    WouldRecommand
+    Rating
+  }
+}
+    `;
+
+export const useSaveFeedbackMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<SaveFeedbackMutation, TError, SaveFeedbackMutationVariables, TContext>) => {
+    
+    return useMutation<SaveFeedbackMutation, TError, SaveFeedbackMutationVariables, TContext>(
+      {
+    mutationKey: ['saveFeedback'],
+    mutationFn: (variables?: SaveFeedbackMutationVariables) => fetcher<SaveFeedbackMutation, SaveFeedbackMutationVariables>(SaveFeedbackDocument, variables)(),
+    ...options
+  }
+    )};
+
+
+useSaveFeedbackMutation.fetcher = (variables: SaveFeedbackMutationVariables, options?: RequestInit['headers']) => fetcher<SaveFeedbackMutation, SaveFeedbackMutationVariables>(SaveFeedbackDocument, variables, options);

@@ -1,0 +1,10 @@
+mutation saveFeedback($input: Reviews_insert_input!) {
+  insert_Reviews_one(object: $input) {
+    Email
+    Feedback
+    IsApproved
+    Name
+    WouldRecommand
+    Rating
+  }
+}
