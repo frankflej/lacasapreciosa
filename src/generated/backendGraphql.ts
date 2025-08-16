@@ -749,7 +749,7 @@ export type User = {
   Id: Scalars['uuid']['output'];
   LastName: Scalars['String']['output'];
   Password: Scalars['String']['output'];
-  RoleId: Scalars['Int']['output'];
+  RoleId?: Maybe<Scalars['Int']['output']>;
 };
 
 /** aggregated selection of "User" */
@@ -804,6 +804,8 @@ export type User_Bool_Exp = {
 
 /** unique or primary key constraints on table "User" */
 export enum User_Constraint {
+  /** unique or primary key constraint on columns "Email" */
+  UserEmailKey = 'User_Email_key',
   /** unique or primary key constraint on columns "Id" */
   UserPkey = 'User_pkey'
 }
@@ -1938,6 +1940,20 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']['input']>>;
 };
 
+export type CreateAccountMutationVariables = Exact<{
+  input: User_Insert_Input;
+}>;
+
+
+export type CreateAccountMutation = { __typename?: 'mutation_root', insert_User_one?: { __typename?: 'User', Email: string, Password: string, FirstName: string, LastName: string } | null };
+
+export type FetchUserByEmailQueryVariables = Exact<{
+  email: Scalars['String']['input'];
+}>;
+
+
+export type FetchUserByEmailQuery = { __typename?: 'query_root', User: Array<{ __typename?: 'User', Email: string, Password: string, FirstName: string, LastName: string }> };
+
 export type GetFeedbacksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -1958,6 +1974,27 @@ export type SaveFormMutationVariables = Exact<{
 export type SaveFormMutation = { __typename?: 'mutation_root', insert_ContactForm_one?: { __typename?: 'ContactForm', FName?: string | null, Email?: string | null, Message: string } | null };
 
 
+export const CreateAccountDocument = gql`
+    mutation createAccount($input: User_insert_input!) {
+  insert_User_one(object: $input) {
+    Email
+    Password
+    FirstName
+    LastName
+  }
+}
+    `;
+export const FetchUserByEmailDocument = gql`
+    query fetchUserByEmail($email: String!) {
+  User(where: {Email: {_eq: $email}}) {
+    Email
+    Password
+    FirstName
+    LastName
+    Password
+  }
+}
+    `;
 export const GetFeedbacksDocument = gql`
     query getFeedbacks {
   Reviews(order_by: {CreatedAt: desc}) {
@@ -2000,6 +2037,12 @@ const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationTy
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
+    createAccount(variables: CreateAccountMutationVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<CreateAccountMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CreateAccountMutation>({ document: CreateAccountDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'createAccount', 'mutation', variables);
+    },
+    fetchUserByEmail(variables: FetchUserByEmailQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<FetchUserByEmailQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<FetchUserByEmailQuery>({ document: FetchUserByEmailDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'fetchUserByEmail', 'query', variables);
+    },
     getFeedbacks(variables?: GetFeedbacksQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetFeedbacksQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetFeedbacksQuery>({ document: GetFeedbacksDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'getFeedbacks', 'query', variables);
     },
