@@ -2,10 +2,8 @@
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 const LOCATION_NAME = "La Perla Negra";
-const MAP_LINK =
+export const MAP_LINK =
   "https://www.google.com/maps/place/La+Perla+Negra,+Lake+Muhazi,+Rwanda/@-1.8615754,30.4378887,736m/data=!3m1!1e3!4m9!3m8!1s0x19db41b54011b13f:0x8790fdc5824dd63c!5m2!4m1!1i2!8m2!3d-1.8619118!4d30.4369867!16s%2Fg%2F11rjhzk5dq?hl=fr_CA&entry=ttu";
-const MAP_PREVIEW =
-  "https://maps.googleapis.com/maps/api/staticmap?center=-1.8619118,30.4369867&zoom=14&size=400x180&markers=color:red%7C-1.8619118,30.4369867&key=YOUR_GOOGLE_MAPS_API_KEY"; // Replace with your API key or use a static image
 
 export default function LocationDirection() {
   return (

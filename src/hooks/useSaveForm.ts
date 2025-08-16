@@ -1,13 +1,13 @@
-import { useSaveFeedbackMutation, SaveFeedbackMutation, SaveFeedbackMutationVariables } from "../generated/graphql";
+import { useSaveFormMutation, SaveFormMutation, SaveFormMutationVariables } from "../generated/graphql";
 import { useToast } from "@/components/ui/use-Toast";
 
-export const useSaveFeedbacks = (setFormData: (formData: any) => void) => {
+export const useSaveForm = (setFormData: (formData: any) => void) => {
     const { toast } = useToast();
-     const { mutate, isPending: isLoading,isSuccess } = useSaveFeedbackMutation<SaveFeedbackMutation, SaveFeedbackMutationVariables>({
+     const { mutate, isPending: isLoading,isSuccess,isError } = useSaveFormMutation<SaveFormMutation, SaveFormMutationVariables>({
         onSuccess: () => {
             toast({
-                title: '🎉 Feedback submitted successfully!',
-                description: 'Thank you for your feedback!',
+                title: '🎉 Form submitted successfully!',
+                description: 'Thank you for your message!',
                 status: 'success',
             });
             setFormData({
@@ -27,5 +27,5 @@ export const useSaveFeedbacks = (setFormData: (formData: any) => void) => {
         }
      });
      console.log('isSaving', isLoading);
-    return { mutate, isLoading, isSuccess };
+    return { mutate, isLoading, isSuccess, isError };
 };

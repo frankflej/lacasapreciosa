@@ -1,0 +1,7 @@
+mutation saveForm($input: ContactForm_insert_input!) {
+  insert_ContactForm_one(object: $input) {
+    FName
+    Email
+    Message
+  }
+}

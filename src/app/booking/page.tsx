@@ -127,7 +127,7 @@ export default function Booking() {
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl text-center">
               <h4 className="font-semibold text-gray-800 mb-2">Visit Our Contact Page</h4>
               <p className="text-gray-600 mb-4 text-sm">
-                Fill out our contact form and we&apos;ll get back to you within 24 hours
+                Fill out our contact form and we&apos;ll get back to you within a short time
               </p>
               <Link 
                 href="/contact"
