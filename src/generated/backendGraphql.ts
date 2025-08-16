@@ -34,6 +34,176 @@ export type Boolean_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['Boolean']['input']>>;
 };
 
+/** columns and relationships of "ContactForm" */
+export type ContactForm = {
+  __typename?: 'ContactForm';
+  CreatedAt?: Maybe<Scalars['date']['output']>;
+  Email?: Maybe<Scalars['String']['output']>;
+  FName?: Maybe<Scalars['String']['output']>;
+  FormId: Scalars['uuid']['output'];
+  Message: Scalars['String']['output'];
+};
+
+/** aggregated selection of "ContactForm" */
+export type ContactForm_Aggregate = {
+  __typename?: 'ContactForm_aggregate';
+  aggregate?: Maybe<ContactForm_Aggregate_Fields>;
+  nodes: Array<ContactForm>;
+};
+
+/** aggregate fields of "ContactForm" */
+export type ContactForm_Aggregate_Fields = {
+  __typename?: 'ContactForm_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<ContactForm_Max_Fields>;
+  min?: Maybe<ContactForm_Min_Fields>;
+};
+
+
+/** aggregate fields of "ContactForm" */
+export type ContactForm_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<ContactForm_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Boolean expression to filter rows from the table "ContactForm". All fields are combined with a logical 'AND'. */
+export type ContactForm_Bool_Exp = {
+  CreatedAt?: InputMaybe<Date_Comparison_Exp>;
+  Email?: InputMaybe<String_Comparison_Exp>;
+  FName?: InputMaybe<String_Comparison_Exp>;
+  FormId?: InputMaybe<Uuid_Comparison_Exp>;
+  Message?: InputMaybe<String_Comparison_Exp>;
+  _and?: InputMaybe<Array<ContactForm_Bool_Exp>>;
+  _not?: InputMaybe<ContactForm_Bool_Exp>;
+  _or?: InputMaybe<Array<ContactForm_Bool_Exp>>;
+};
+
+/** unique or primary key constraints on table "ContactForm" */
+export enum ContactForm_Constraint {
+  /** unique or primary key constraint on columns "FormId" */
+  ContactFormPkey = 'ContactForm_pkey'
+}
+
+/** input type for inserting data into table "ContactForm" */
+export type ContactForm_Insert_Input = {
+  CreatedAt?: InputMaybe<Scalars['date']['input']>;
+  Email?: InputMaybe<Scalars['String']['input']>;
+  FName?: InputMaybe<Scalars['String']['input']>;
+  FormId?: InputMaybe<Scalars['uuid']['input']>;
+  Message?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** aggregate max on columns */
+export type ContactForm_Max_Fields = {
+  __typename?: 'ContactForm_max_fields';
+  CreatedAt?: Maybe<Scalars['date']['output']>;
+  Email?: Maybe<Scalars['String']['output']>;
+  FName?: Maybe<Scalars['String']['output']>;
+  FormId?: Maybe<Scalars['uuid']['output']>;
+  Message?: Maybe<Scalars['String']['output']>;
+};
+
+/** aggregate min on columns */
+export type ContactForm_Min_Fields = {
+  __typename?: 'ContactForm_min_fields';
+  CreatedAt?: Maybe<Scalars['date']['output']>;
+  Email?: Maybe<Scalars['String']['output']>;
+  FName?: Maybe<Scalars['String']['output']>;
+  FormId?: Maybe<Scalars['uuid']['output']>;
+  Message?: Maybe<Scalars['String']['output']>;
+};
+
+/** response of any mutation on the table "ContactForm" */
+export type ContactForm_Mutation_Response = {
+  __typename?: 'ContactForm_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<ContactForm>;
+};
+
+/** on_conflict condition type for table "ContactForm" */
+export type ContactForm_On_Conflict = {
+  constraint: ContactForm_Constraint;
+  update_columns?: Array<ContactForm_Update_Column>;
+  where?: InputMaybe<ContactForm_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "ContactForm". */
+export type ContactForm_Order_By = {
+  CreatedAt?: InputMaybe<Order_By>;
+  Email?: InputMaybe<Order_By>;
+  FName?: InputMaybe<Order_By>;
+  FormId?: InputMaybe<Order_By>;
+  Message?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: ContactForm */
+export type ContactForm_Pk_Columns_Input = {
+  FormId: Scalars['uuid']['input'];
+};
+
+/** select columns of table "ContactForm" */
+export enum ContactForm_Select_Column {
+  /** column name */
+  CreatedAt = 'CreatedAt',
+  /** column name */
+  Email = 'Email',
+  /** column name */
+  FName = 'FName',
+  /** column name */
+  FormId = 'FormId',
+  /** column name */
+  Message = 'Message'
+}
+
+/** input type for updating data in table "ContactForm" */
+export type ContactForm_Set_Input = {
+  CreatedAt?: InputMaybe<Scalars['date']['input']>;
+  Email?: InputMaybe<Scalars['String']['input']>;
+  FName?: InputMaybe<Scalars['String']['input']>;
+  FormId?: InputMaybe<Scalars['uuid']['input']>;
+  Message?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Streaming cursor of the table "ContactForm" */
+export type ContactForm_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: ContactForm_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type ContactForm_Stream_Cursor_Value_Input = {
+  CreatedAt?: InputMaybe<Scalars['date']['input']>;
+  Email?: InputMaybe<Scalars['String']['input']>;
+  FName?: InputMaybe<Scalars['String']['input']>;
+  FormId?: InputMaybe<Scalars['uuid']['input']>;
+  Message?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** update columns of table "ContactForm" */
+export enum ContactForm_Update_Column {
+  /** column name */
+  CreatedAt = 'CreatedAt',
+  /** column name */
+  Email = 'Email',
+  /** column name */
+  FName = 'FName',
+  /** column name */
+  FormId = 'FormId',
+  /** column name */
+  Message = 'Message'
+}
+
+export type ContactForm_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<ContactForm_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: ContactForm_Bool_Exp;
+};
+
 /** Boolean expression to compare columns of type "Int". All fields are combined with logical 'AND'. */
 export type Int_Comparison_Exp = {
   _eq?: InputMaybe<Scalars['Int']['input']>;
@@ -851,6 +1021,10 @@ export type Date_Comparison_Exp = {
 /** mutation root */
 export type Mutation_Root = {
   __typename?: 'mutation_root';
+  /** delete data from the table: "ContactForm" */
+  delete_ContactForm?: Maybe<ContactForm_Mutation_Response>;
+  /** delete single row from the table: "ContactForm" */
+  delete_ContactForm_by_pk?: Maybe<ContactForm>;
   /** delete data from the table: "Reviews" */
   delete_Reviews?: Maybe<Reviews_Mutation_Response>;
   /** delete single row from the table: "Reviews" */
@@ -867,6 +1041,10 @@ export type Mutation_Root = {
   delete_testing?: Maybe<Testing_Mutation_Response>;
   /** delete single row from the table: "testing" */
   delete_testing_by_pk?: Maybe<Testing>;
+  /** insert data into the table: "ContactForm" */
+  insert_ContactForm?: Maybe<ContactForm_Mutation_Response>;
+  /** insert a single row into the table: "ContactForm" */
+  insert_ContactForm_one?: Maybe<ContactForm>;
   /** insert data into the table: "Reviews" */
   insert_Reviews?: Maybe<Reviews_Mutation_Response>;
   /** insert a single row into the table: "Reviews" */
@@ -883,6 +1061,12 @@ export type Mutation_Root = {
   insert_testing?: Maybe<Testing_Mutation_Response>;
   /** insert a single row into the table: "testing" */
   insert_testing_one?: Maybe<Testing>;
+  /** update data of the table: "ContactForm" */
+  update_ContactForm?: Maybe<ContactForm_Mutation_Response>;
+  /** update single row of the table: "ContactForm" */
+  update_ContactForm_by_pk?: Maybe<ContactForm>;
+  /** update multiples rows of table: "ContactForm" */
+  update_ContactForm_many?: Maybe<Array<Maybe<ContactForm_Mutation_Response>>>;
   /** update data of the table: "Reviews" */
   update_Reviews?: Maybe<Reviews_Mutation_Response>;
   /** update single row of the table: "Reviews" */
@@ -907,6 +1091,18 @@ export type Mutation_Root = {
   update_testing_by_pk?: Maybe<Testing>;
   /** update multiples rows of table: "testing" */
   update_testing_many?: Maybe<Array<Maybe<Testing_Mutation_Response>>>;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_ContactFormArgs = {
+  where: ContactForm_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_ContactForm_By_PkArgs = {
+  FormId: Scalars['uuid']['input'];
 };
 
 
@@ -955,6 +1151,20 @@ export type Mutation_RootDelete_TestingArgs = {
 /** mutation root */
 export type Mutation_RootDelete_Testing_By_PkArgs = {
   id: Scalars['Int']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_ContactFormArgs = {
+  objects: Array<ContactForm_Insert_Input>;
+  on_conflict?: InputMaybe<ContactForm_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_ContactForm_OneArgs = {
+  object: ContactForm_Insert_Input;
+  on_conflict?: InputMaybe<ContactForm_On_Conflict>;
 };
 
 
@@ -1011,6 +1221,26 @@ export type Mutation_RootInsert_TestingArgs = {
 export type Mutation_RootInsert_Testing_OneArgs = {
   object: Testing_Insert_Input;
   on_conflict?: InputMaybe<Testing_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_ContactFormArgs = {
+  _set?: InputMaybe<ContactForm_Set_Input>;
+  where: ContactForm_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_ContactForm_By_PkArgs = {
+  _set?: InputMaybe<ContactForm_Set_Input>;
+  pk_columns: ContactForm_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_ContactForm_ManyArgs = {
+  updates: Array<ContactForm_Updates>;
 };
 
 
@@ -1132,6 +1362,12 @@ export enum Order_By {
 
 export type Query_Root = {
   __typename?: 'query_root';
+  /** fetch data from the table: "ContactForm" */
+  ContactForm: Array<ContactForm>;
+  /** fetch aggregated fields from the table: "ContactForm" */
+  ContactForm_aggregate: ContactForm_Aggregate;
+  /** fetch data from the table: "ContactForm" using primary key columns */
+  ContactForm_by_pk?: Maybe<ContactForm>;
   /** fetch data from the table: "Reviews" */
   Reviews: Array<Reviews>;
   /** fetch aggregated fields from the table: "Reviews" */
@@ -1156,6 +1392,29 @@ export type Query_Root = {
   testing_aggregate: Testing_Aggregate;
   /** fetch data from the table: "testing" using primary key columns */
   testing_by_pk?: Maybe<Testing>;
+};
+
+
+export type Query_RootContactFormArgs = {
+  distinct_on?: InputMaybe<Array<ContactForm_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<ContactForm_Order_By>>;
+  where?: InputMaybe<ContactForm_Bool_Exp>;
+};
+
+
+export type Query_RootContactForm_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<ContactForm_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<ContactForm_Order_By>>;
+  where?: InputMaybe<ContactForm_Bool_Exp>;
+};
+
+
+export type Query_RootContactForm_By_PkArgs = {
+  FormId: Scalars['uuid']['input'];
 };
 
 
@@ -1252,6 +1511,14 @@ export type Query_RootTesting_By_PkArgs = {
 
 export type Subscription_Root = {
   __typename?: 'subscription_root';
+  /** fetch data from the table: "ContactForm" */
+  ContactForm: Array<ContactForm>;
+  /** fetch aggregated fields from the table: "ContactForm" */
+  ContactForm_aggregate: ContactForm_Aggregate;
+  /** fetch data from the table: "ContactForm" using primary key columns */
+  ContactForm_by_pk?: Maybe<ContactForm>;
+  /** fetch data from the table in a streaming manner: "ContactForm" */
+  ContactForm_stream: Array<ContactForm>;
   /** fetch data from the table: "Reviews" */
   Reviews: Array<Reviews>;
   /** fetch aggregated fields from the table: "Reviews" */
@@ -1284,6 +1551,36 @@ export type Subscription_Root = {
   testing_by_pk?: Maybe<Testing>;
   /** fetch data from the table in a streaming manner: "testing" */
   testing_stream: Array<Testing>;
+};
+
+
+export type Subscription_RootContactFormArgs = {
+  distinct_on?: InputMaybe<Array<ContactForm_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<ContactForm_Order_By>>;
+  where?: InputMaybe<ContactForm_Bool_Exp>;
+};
+
+
+export type Subscription_RootContactForm_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<ContactForm_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<ContactForm_Order_By>>;
+  where?: InputMaybe<ContactForm_Bool_Exp>;
+};
+
+
+export type Subscription_RootContactForm_By_PkArgs = {
+  FormId: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootContactForm_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<ContactForm_Stream_Cursor_Input>>;
+  where?: InputMaybe<ContactForm_Bool_Exp>;
 };
 
 
@@ -1653,6 +1950,13 @@ export type SaveFeedbackMutationVariables = Exact<{
 
 export type SaveFeedbackMutation = { __typename?: 'mutation_root', insert_Reviews_one?: { __typename?: 'Reviews', Email: string, Feedback: string, IsApproved?: boolean | null, Name: string, WouldRecommand: string, Rating: any } | null };
 
+export type SaveFormMutationVariables = Exact<{
+  input: ContactForm_Insert_Input;
+}>;
+
+
+export type SaveFormMutation = { __typename?: 'mutation_root', insert_ContactForm_one?: { __typename?: 'ContactForm', FName?: string | null, Email?: string | null, Message: string } | null };
+
 
 export const GetFeedbacksDocument = gql`
     query getFeedbacks {
@@ -1679,6 +1983,15 @@ export const SaveFeedbackDocument = gql`
   }
 }
     `;
+export const SaveFormDocument = gql`
+    mutation saveForm($input: ContactForm_insert_input!) {
+  insert_ContactForm_one(object: $input) {
+    FName
+    Email
+    Message
+  }
+}
+    `;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string, variables?: any) => Promise<T>;
 
@@ -1692,6 +2005,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     saveFeedback(variables: SaveFeedbackMutationVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<SaveFeedbackMutation> {
       return withWrapper((wrappedRequestHeaders) => client.request<SaveFeedbackMutation>({ document: SaveFeedbackDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'saveFeedback', 'mutation', variables);
+    },
+    saveForm(variables: SaveFormMutationVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<SaveFormMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<SaveFormMutation>({ document: SaveFormDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'saveForm', 'mutation', variables);
     }
   };
 }
