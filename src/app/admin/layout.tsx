@@ -23,11 +23,13 @@ interface AdminLayoutProps {
 
 const navigation = [
   { name: 'Dashboard', href: '/admin', icon: Home },
-  { name: 'Bookings', href: '/admin/bookings', icon: Calendar },
-  { name: 'Payments', href: '/admin/payments', icon: DollarSign },
-  { name: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
+  // { name: 'Bookings', href: '/admin/bookings', icon: Calendar },
+  // { name: 'Payments', href: '/admin/payments', icon: DollarSign },
+  { name: 'Reviews', href: '/admin/review', icon: BarChart3 },
+  { name: 'Help', href: '/admin/help', icon: Calendar },
   { name: 'Admins', href: '/admin/admins', icon: Users },
   { name: 'Settings', href: '/admin/settings', icon: Settings },
+
 ]
 
 export default function AdminLayout({ children }: AdminLayoutProps) {
@@ -87,7 +89,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       <div className="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0">
         <div className="flex flex-col flex-grow bg-white border-r border-gray-200">
           <div className="flex items-center flex-shrink-0 px-6 py-4 border-b">
-            <h2 className="text-lg font-semibold text-gray-900">La Casa Preciosa</h2>
+            <h2 className="text-lg font-semibold text-gray-900">La Perla Negra</h2>
           </div>
           <div className="flex flex-col flex-grow mt-5">
             <nav className="flex-1 px-4 pb-4 space-y-2">
@@ -121,7 +123,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         <SheetContent side="left" className="w-64 p-0">
           <div className="flex flex-col h-full">
             <div className="p-6 border-b">
-              <h2 className="text-lg font-semibold text-gray-900">La Casa Preciosa</h2>
+              <h2 className="text-lg font-semibold text-gray-900">La Perla Negra</h2>
               <p className="text-sm text-gray-500">Admin Panel</p>
             </div>
             <nav className="flex-1 p-4 space-y-2">
@@ -162,7 +164,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           >
             <Menu className="h-6 w-6" />
           </Button>
-          <h1 className="text-lg font-semibold">La Casa Preciosa</h1>
+          <h1 className="text-lg font-semibold">La Perla Negra</h1>
           <div className="w-10" /> {/* Spacer */}
         </div>
 

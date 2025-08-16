@@ -87,13 +87,12 @@ function getStatusIcon(status: string) {
 
 export default function AdminDashboard() {
   return (
-    <AdminLayout>
       <div className="space-y-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-            <p className="text-gray-600">Welcome back! Here&apos;s what&apos;s happening with La Casa Preciosa.</p>
+            <p className="text-gray-600">Welcome back! Here&apos;s what&apos;s happening with La Perla Negra.</p>
           </div>
           <div className="mt-4 sm:mt-0">
             <p className="text-sm text-gray-500">
@@ -254,6 +253,5 @@ export default function AdminDashboard() {
           </Card>
         </div>
       </div>
-    </AdminLayout>
   )
 } 

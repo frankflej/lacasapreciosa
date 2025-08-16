@@ -198,7 +198,6 @@ export default function BookingsPage() {
   })
 
   return (
-    <AdminLayout>
       <div className="space-y-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
@@ -389,6 +388,5 @@ export default function BookingsPage() {
           </Card>
         </div>
       </div>
-    </AdminLayout>
   )
 } 

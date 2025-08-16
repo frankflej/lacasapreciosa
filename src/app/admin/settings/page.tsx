@@ -31,7 +31,6 @@ export default function SettingsPage() {
   const [showApiKey, setShowApiKey] = useState(false)
 
   return (
-    <AdminLayout>
       <div className="space-y-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
@@ -53,7 +52,7 @@ export default function SettingsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="property-name">Property Name</Label>
-                <Input id="property-name" defaultValue="La Casa Preciosa" />
+                <Input id="property-name" defaultValue="La Perla Negra" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="property-type">Property Type</Label>
@@ -189,6 +188,5 @@ export default function SettingsPage() {
           </Button>
         </div>
       </div>
-    </AdminLayout>
   )
 } 

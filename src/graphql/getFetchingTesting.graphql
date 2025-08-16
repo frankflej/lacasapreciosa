@@ -7,5 +7,6 @@ query getFeedbacks {
     Name
     ReviewsId
     Rating
+    WouldRecommand
   }
 }

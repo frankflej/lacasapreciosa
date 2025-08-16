@@ -209,7 +209,6 @@ export default function PaymentsPage() {
     .reduce((sum, p) => sum + Math.abs(p.amount), 0)
 
   return (
-    <AdminLayout>
       <div className="space-y-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
@@ -465,6 +464,5 @@ export default function PaymentsPage() {
           </CardContent>
         </Card>
       </div>
-    </AdminLayout>
   )
 } 

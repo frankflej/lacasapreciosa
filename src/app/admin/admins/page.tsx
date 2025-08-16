@@ -171,7 +171,7 @@ export default function AdminsPage() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="text-2xl font-bold text-gray-900">Admin Management</h1>
-            <p className="text-gray-600">Manage admin users, roles, and permissions for La Casa Preciosa.</p>
+            <p className="text-gray-600">Manage admin users, roles, and permissions for La Perla Negra.</p>
           </div>
           <Dialog>
             <DialogTrigger asChild>
