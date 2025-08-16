@@ -1,0 +1,8 @@
+mutation createAccount($input: User_insert_input!) {
+  insert_User_one(object: $input) {
+    Email
+    Password
+    FirstName
+    LastName
+  }
+}

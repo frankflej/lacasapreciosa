@@ -1,4 +1,4 @@
-import { useQuery, useSuspenseQuery, useInfiniteQuery, useSuspenseInfiniteQuery, useMutation, UseQueryOptions, UseSuspenseQueryOptions, UseInfiniteQueryOptions, InfiniteData, UseSuspenseInfiniteQueryOptions, UseMutationOptions } from '@tanstack/react-query';
+import { useMutation, useQuery, useSuspenseQuery, useInfiniteQuery, useSuspenseInfiniteQuery, UseMutationOptions, UseQueryOptions, UseSuspenseQueryOptions, UseInfiniteQueryOptions, InfiniteData, UseSuspenseInfiniteQueryOptions } from '@tanstack/react-query';
 import { fetcher } from '../helpers/fetcher';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
@@ -757,7 +757,7 @@ export type User = {
   Id: Scalars['uuid']['output'];
   LastName: Scalars['String']['output'];
   Password: Scalars['String']['output'];
-  RoleId: Scalars['Int']['output'];
+  RoleId?: Maybe<Scalars['Int']['output']>;
 };
 
 /** aggregated selection of "User" */
@@ -812,6 +812,8 @@ export type User_Bool_Exp = {
 
 /** unique or primary key constraints on table "User" */
 export enum User_Constraint {
+  /** unique or primary key constraint on columns "Email" */
+  UserEmailKey = 'User_Email_key',
   /** unique or primary key constraint on columns "Id" */
   UserPkey = 'User_pkey'
 }
@@ -1946,6 +1948,20 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']['input']>>;
 };
 
+export type CreateAccountMutationVariables = Exact<{
+  input: User_Insert_Input;
+}>;
+
+
+export type CreateAccountMutation = { __typename?: 'mutation_root', insert_User_one?: { __typename?: 'User', Email: string, Password: string, FirstName: string, LastName: string } | null };
+
+export type FetchUserByEmailQueryVariables = Exact<{
+  email: Scalars['String']['input'];
+}>;
+
+
+export type FetchUserByEmailQuery = { __typename?: 'query_root', User: Array<{ __typename?: 'User', Email: string, Password: string, FirstName: string, LastName: string }> };
+
 export type GetFeedbacksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -1966,6 +1982,126 @@ export type SaveFormMutationVariables = Exact<{
 export type SaveFormMutation = { __typename?: 'mutation_root', insert_ContactForm_one?: { __typename?: 'ContactForm', FName?: string | null, Email?: string | null, Message: string } | null };
 
 
+
+export const CreateAccountDocument = `
+    mutation createAccount($input: User_insert_input!) {
+  insert_User_one(object: $input) {
+    Email
+    Password
+    FirstName
+    LastName
+  }
+}
+    `;
+
+export const useCreateAccountMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<CreateAccountMutation, TError, CreateAccountMutationVariables, TContext>) => {
+    
+    return useMutation<CreateAccountMutation, TError, CreateAccountMutationVariables, TContext>(
+      {
+    mutationKey: ['createAccount'],
+    mutationFn: (variables?: CreateAccountMutationVariables) => fetcher<CreateAccountMutation, CreateAccountMutationVariables>(CreateAccountDocument, variables)(),
+    ...options
+  }
+    )};
+
+
+useCreateAccountMutation.fetcher = (variables: CreateAccountMutationVariables, options?: RequestInit['headers']) => fetcher<CreateAccountMutation, CreateAccountMutationVariables>(CreateAccountDocument, variables, options);
+
+export const FetchUserByEmailDocument = `
+    query fetchUserByEmail($email: String!) {
+  User(where: {Email: {_eq: $email}}) {
+    Email
+    Password
+    FirstName
+    LastName
+    Password
+  }
+}
+    `;
+
+export const useFetchUserByEmailQuery = <
+      TData = FetchUserByEmailQuery,
+      TError = unknown
+    >(
+      variables: FetchUserByEmailQueryVariables,
+      options?: Omit<UseQueryOptions<FetchUserByEmailQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<FetchUserByEmailQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useQuery<FetchUserByEmailQuery, TError, TData>(
+      {
+    queryKey: ['fetchUserByEmail', variables],
+    queryFn: fetcher<FetchUserByEmailQuery, FetchUserByEmailQueryVariables>(FetchUserByEmailDocument, variables),
+    ...options
+  }
+    )};
+
+useFetchUserByEmailQuery.getKey = (variables: FetchUserByEmailQueryVariables) => ['fetchUserByEmail', variables];
+
+export const useSuspenseFetchUserByEmailQuery = <
+      TData = FetchUserByEmailQuery,
+      TError = unknown
+    >(
+      variables: FetchUserByEmailQueryVariables,
+      options?: Omit<UseSuspenseQueryOptions<FetchUserByEmailQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseQueryOptions<FetchUserByEmailQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useSuspenseQuery<FetchUserByEmailQuery, TError, TData>(
+      {
+    queryKey: ['fetchUserByEmailSuspense', variables],
+    queryFn: fetcher<FetchUserByEmailQuery, FetchUserByEmailQueryVariables>(FetchUserByEmailDocument, variables),
+    ...options
+  }
+    )};
+
+useSuspenseFetchUserByEmailQuery.getKey = (variables: FetchUserByEmailQueryVariables) => ['fetchUserByEmailSuspense', variables];
+
+export const useInfiniteFetchUserByEmailQuery = <
+      TData = InfiniteData<FetchUserByEmailQuery>,
+      TError = unknown
+    >(
+      variables: FetchUserByEmailQueryVariables,
+      options: Omit<UseInfiniteQueryOptions<FetchUserByEmailQuery, TError, TData>, 'queryKey'> & { queryKey?: UseInfiniteQueryOptions<FetchUserByEmailQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useInfiniteQuery<FetchUserByEmailQuery, TError, TData>(
+      (() => {
+    const { queryKey: optionsQueryKey, ...restOptions } = options;
+    return {
+      queryKey: optionsQueryKey ?? ['fetchUserByEmail.infinite', variables],
+      queryFn: (metaData) => fetcher<FetchUserByEmailQuery, FetchUserByEmailQueryVariables>(FetchUserByEmailDocument, {...variables, ...(metaData.pageParam ?? {})})(),
+      ...restOptions
+    }
+  })()
+    )};
+
+useInfiniteFetchUserByEmailQuery.getKey = (variables: FetchUserByEmailQueryVariables) => ['fetchUserByEmail.infinite', variables];
+
+export const useSuspenseInfiniteFetchUserByEmailQuery = <
+      TData = InfiniteData<FetchUserByEmailQuery>,
+      TError = unknown
+    >(
+      variables: FetchUserByEmailQueryVariables,
+      options: Omit<UseSuspenseInfiniteQueryOptions<FetchUserByEmailQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseInfiniteQueryOptions<FetchUserByEmailQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useSuspenseInfiniteQuery<FetchUserByEmailQuery, TError, TData>(
+      (() => {
+    const { queryKey: optionsQueryKey, ...restOptions } = options;
+    return {
+      queryKey: optionsQueryKey ?? ['fetchUserByEmail.infiniteSuspense', variables],
+      queryFn: (metaData) => fetcher<FetchUserByEmailQuery, FetchUserByEmailQueryVariables>(FetchUserByEmailDocument, {...variables, ...(metaData.pageParam ?? {})})(),
+      ...restOptions
+    }
+  })()
+    )};
+
+useSuspenseInfiniteFetchUserByEmailQuery.getKey = (variables: FetchUserByEmailQueryVariables) => ['fetchUserByEmail.infiniteSuspense', variables];
+
+
+useFetchUserByEmailQuery.fetcher = (variables: FetchUserByEmailQueryVariables, options?: RequestInit['headers']) => fetcher<FetchUserByEmailQuery, FetchUserByEmailQueryVariables>(FetchUserByEmailDocument, variables, options);
 
 export const GetFeedbacksDocument = `
     query getFeedbacks {

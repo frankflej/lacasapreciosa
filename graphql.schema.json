@@ -4843,13 +4843,9 @@
             "description": null,
             "args": [],
             "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              }
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -5270,6 +5266,12 @@
         "inputFields": null,
         "interfaces": null,
         "enumValues": [
+          {
+            "name": "User_Email_key",
+            "description": "unique or primary key constraint on columns \"Email\"",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
           {
             "name": "User_pkey",
             "description": "unique or primary key constraint on columns \"Id\"",

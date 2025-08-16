@@ -1,0 +1,9 @@
+query fetchUserByEmail($email: String!) {
+  User(where: { Email: { _eq: $email } }) {
+    Email
+    Password
+    FirstName
+    LastName
+    Password
+  }
+}
