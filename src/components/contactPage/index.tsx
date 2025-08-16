@@ -87,7 +87,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
-                    <p className="text-gray-600">+250 785 310 691</p>
+                    <p className="text-gray-600">+250 795 047 121</p>
                     <p className="text-sm text-gray-500">Available 24/7 for reservations</p>
                   </div>
                 </div>

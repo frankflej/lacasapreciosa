@@ -87,7 +87,7 @@ export default function Booking() {
                 </div>
                 <div className="text-left">
                   <p className="text-sm opacity-80">Call us directly</p>
-                  <h3 className="text-3xl font-bold">+250 785 310 691</h3>
+                  <h3 className="text-3xl font-bold">+250 795 047 121</h3>
                 </div>
               </div>
               <p className="text-lg opacity-90">Available 24/7 for your reservations</p>
