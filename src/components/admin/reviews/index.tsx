@@ -5,6 +5,7 @@ import { useFetchingFeedbacks } from "@/hooks/useFetchingFeedbacks";
 
 const ReviewsPage = () => {
   const { data:reviews, isFetching, error } = useFetchingFeedbacks();
+  console.log(reviews);
   return (
     <div className="p-6 space-y-6">
       {/* Header */}
@@ -27,7 +28,8 @@ const ReviewsPage = () => {
           </h2>
         </CardContent></Card>
 
-        <Card><CardContent className="p-4">
+        <Card>
+          <CardContent className="p-4">
           <p className="text-gray-500">Would Recommend</p>
           <h2 className="text-xl font-semibold">
             {reviews?.Reviews.filter(r => r.WouldRecommand === "Definitely Yes" || r.WouldRecommand === "Probably Yes" || r.WouldRecommand === "Maybe").length}
@@ -46,7 +48,9 @@ const ReviewsPage = () => {
               </div>
               <p className="text-gray-600 text-sm">{r.Email}</p>
               <p className="text-gray-800">
-                {r.WouldRecommand  &&  r.WouldRecommand === "Definitely Yes" ? "✅ Definitely Yes" : r.WouldRecommand === "Probably Yes" ? "✅ Probably Yes" : r.WouldRecommand === "Maybe" ? "✅ Maybe" : r.WouldRecommand === "Probably No" ? "❌ Probably No" : r.WouldRecommand === "Definitely No" ? "❌ Definitely No" : "❌ Not Recommended"}
+                <p className="font-semibold">Feedback: </p>{r.Feedback}</p>
+              <p className="text-gray-800 ">
+                <p className="font-semibold">Would Recommend: </p>{r.WouldRecommand  &&  r.WouldRecommand === "Definitely Yes" ? "✅ Definitely Yes" : r.WouldRecommand === "Probably Yes" ? "✅ Probably Yes" : r.WouldRecommand === "Maybe" ? "✅ Maybe" : r.WouldRecommand === "Probably No" ? "❌ Probably No" : r.WouldRecommand === "Definitely No" ? "❌ Definitely No" : "❌ Not Recommended"}
               </p>
               <p className="text-gray-400 text-xs">
                 {new Date(r.CreatedAt).toLocaleDateString()}
